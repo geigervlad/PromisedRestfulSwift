@@ -26,18 +26,18 @@ public enum OAuthGrantTypes: String {
     case clientCredentials = "client_credentials"
 }
 
-public var ValidHttpStatusCodes: [Int] {
+public var validHttpStatusCodes: [Int] {
     return Array(200..<300)
 }
 
 public var validHttpStatusCodesNotFound: [Int] {
-    var array: [Int] = ValidHttpStatusCodes
+    var array: [Int] = validHttpStatusCodes
     array.append(404)
     return array
 }
 
 public var validHttpStatusCodesBadRequest: [Int] {
-    var array: [Int] = ValidHttpStatusCodes
+    var array: [Int] = validHttpStatusCodes
     array.append(400)
     return array
 }

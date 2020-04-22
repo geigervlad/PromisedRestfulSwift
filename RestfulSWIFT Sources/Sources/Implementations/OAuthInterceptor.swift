@@ -22,24 +22,24 @@ public struct OAuthData: Decodable {
     var refreshTokenExpiresAt: Date?
     
     enum DecodingKeys: String, CodingKey {
-        case access_token
-        case refresh_token
-        case expires_in
-        case refresh_expires_in
+        case accessToken = "access_token"
+        case refreshToken = "refresh_token"
+        case expiresIn = "expires_in"
+        case refreshExpiresIn = "refresh_expires_in"
     }
     
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: DecodingKeys.self)
-        let accessTokenExpiresIn = try values.decode(Int.self, forKey: .expires_in)
+        let accessTokenExpiresIn = try values.decode(Int.self, forKey: .expiresIn)
         let now = Date()
         accessTokenExpiresAt = now.addingTimeInterval(TimeInterval(accessTokenExpiresIn))
-        if let refreshTokenExpiresIn = try values.decode(Optional<Int>.self, forKey: .refresh_expires_in) {
+        if let refreshTokenExpiresIn = try values.decode(Optional<Int>.self, forKey: .refreshExpiresIn) {
             refreshTokenExpiresAt = now.addingTimeInterval(TimeInterval(refreshTokenExpiresIn))
         } else {
             refreshTokenExpiresAt = nil
         }
-        accessToken = try values.decode(String.self, forKey: .access_token)
-        refreshToken = try values.decode(String.self, forKey: .refresh_token)
+        accessToken = try values.decode(String.self, forKey: .accessToken)
+        refreshToken = try values.decode(String.self, forKey: .refreshToken)
     }
     
 }
@@ -66,6 +66,12 @@ public class OAuthInterceptor: Interceptor, RestfulWrite {
         }
         guard loginData.accessTokenExpiresAt < Date() else {
             return Promise { $0.fulfill(loginData.accessToken) }
+        }
+        guard !loginData.accessToken.isEmpty else {
+            return Promise(error: AuthenticationErrors.notAuthenticated)
+        }
+        guard !loginData.refreshToken.isEmpty else {
+            return Promise(error: AuthenticationErrors.notAuthenticated)
         }
         if let refreshTokenExpiresAt = loginData.refreshTokenExpiresAt, refreshTokenExpiresAt < Date() {
             return Promise(error: AuthenticationErrors.notAuthenticated)
@@ -97,7 +103,7 @@ public class OAuthInterceptor: Interceptor, RestfulWrite {
         return write(url: url)
     }
     
-    private func injectToken(_ token: String,_ request: URLRequest) -> URLRequest {
+    private func injectToken(_ token: String, _ request: URLRequest) -> URLRequest {
         var mutableRequest = request
         mutableRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return mutableRequest

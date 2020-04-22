@@ -32,7 +32,7 @@ public extension HTTPTools {
         guard let httpResponse = response.1 as? HTTPURLResponse else {
             throw DecodingErrors.failedToTransformToHTTPURLResponse
         }
-        guard ValidHttpStatusCodes.contains(httpResponse.statusCode) else {
+        guard validHttpStatusCodes.contains(httpResponse.statusCode) else {
             throw ValidationErrors.invalidHttpCode(code: httpResponse.statusCode)
         }
         return response

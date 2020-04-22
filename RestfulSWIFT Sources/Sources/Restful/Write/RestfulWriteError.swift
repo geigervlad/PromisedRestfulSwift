@@ -14,7 +14,7 @@ public protocol RestfulWriteError {
     var interceptor: Interceptor { get }
     
     /// Defines the Type of the Error Object in case of a server error, for example: validation
-    associatedtype errorObject: Decodable
+    associatedtype ErrorObjectType: Decodable
 }
 
 public extension RestfulWriteError {
