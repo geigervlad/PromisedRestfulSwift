@@ -19,7 +19,7 @@ public struct OAuthData: Decodable {
     var accessToken: String
     var refreshToken: String
     var accessTokenExpiresAt: Date
-    var refreshTokenExpiresAt: Date
+    var refreshTokenExpiresAt: Date?
     
     enum DecodingKeys: String, CodingKey {
         case access_token
@@ -31,10 +31,13 @@ public struct OAuthData: Decodable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: DecodingKeys.self)
         let accessTokenExpiresIn = try values.decode(Int.self, forKey: .expires_in)
-        let refreshTokenExpiresIn = try values.decode(Int.self, forKey: .refresh_expires_in)
         let now = Date()
         accessTokenExpiresAt = now.addingTimeInterval(TimeInterval(accessTokenExpiresIn))
-        refreshTokenExpiresAt = now.addingTimeInterval(TimeInterval(refreshTokenExpiresIn))
+        if let refreshTokenExpiresIn = try values.decode(Optional<Int>.self, forKey: .refresh_expires_in) {
+            refreshTokenExpiresAt = now.addingTimeInterval(TimeInterval(refreshTokenExpiresIn))
+        } else {
+            refreshTokenExpiresAt = nil
+        }
         accessToken = try values.decode(String.self, forKey: .access_token)
         refreshToken = try values.decode(String.self, forKey: .refresh_token)
     }
@@ -64,7 +67,7 @@ public class OAuthInterceptor: Interceptor, RestfulWrite {
         guard loginData.accessTokenExpiresAt < Date() else {
             return Promise { $0.fulfill(loginData.accessToken) }
         }
-        guard loginData.refreshTokenExpiresAt > Date() else {
+        if let refreshTokenExpiresAt = loginData.refreshTokenExpiresAt, refreshTokenExpiresAt < Date() {
             return Promise(error: AuthenticationErrors.notAuthenticated)
         }
         return refreshAccessToken(loginData.refreshToken).map { newLoginData in
