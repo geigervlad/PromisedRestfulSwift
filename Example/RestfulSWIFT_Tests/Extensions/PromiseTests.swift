@@ -22,8 +22,8 @@ class PromiseTests: XCTestCase {
     }
     
     override func tearDown() {
-        self.resolver = nil
-        self.promise = nil
+        resolver = nil
+        promise = nil
     }
     
     func testPromiseDoesNotTimeout() {
