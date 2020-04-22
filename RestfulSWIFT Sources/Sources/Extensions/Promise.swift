@@ -14,7 +14,7 @@ extension Promise {
         return Promise { $0.fulfill(value)}
     }
     
-    func timeout(after seconds: TimeInterval) -> Promise<T> {
+    public func timeout(after seconds: TimeInterval) -> Promise<T> {
         return race(asVoid(), after(seconds: seconds).done {
             throw PromiseErrors.timeout
         }).map {

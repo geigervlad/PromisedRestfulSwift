@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
+               BlueprintIdentifier = "89BA4C05245055B300FA4CEA"
                BuildableName = "RestfulSWIFT_Tests.xctest"
                BlueprintName = "RestfulSWIFT_Tests"
                ReferencedContainer = "container:RestfulSWIFT.xcodeproj">
@@ -55,7 +55,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
+               BlueprintIdentifier = "89BA4C05245055B300FA4CEA"
                BuildableName = "RestfulSWIFT_Tests.xctest"
                BlueprintName = "RestfulSWIFT_Tests"
                ReferencedContainer = "container:RestfulSWIFT.xcodeproj">
