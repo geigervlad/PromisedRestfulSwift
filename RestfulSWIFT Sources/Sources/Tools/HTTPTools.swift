@@ -43,8 +43,6 @@ public extension HTTPTools {
             throw DecodingErrors.failedToExtractData
         }
         let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .deferredToDate
-        decoder.keyDecodingStrategy = .useDefaultKeys
         return try decoder.decode(T.self, from: data)
     }
     
