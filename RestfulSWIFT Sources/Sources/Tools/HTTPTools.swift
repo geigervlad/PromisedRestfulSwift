@@ -8,7 +8,9 @@
 
 import PromiseKit
 
-public protocol HTTPTools { }
+public protocol HTTPTools {
+    func executeRequestAsPromise(_ request: URLRequest) -> Promise<HTTPResponseType>
+}
 
 public extension HTTPTools {
         
