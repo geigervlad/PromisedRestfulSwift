@@ -1,0 +1,18 @@
+use_frameworks!
+
+platform :ios, '11.4'
+
+target 'RestfulSWIFT_Example' do
+  
+  pod 'RestfulSWIFT', :path => '../'
+  
+  pod 'PromiseKit', '6.13.0'
+  
+  pod 'SwiftLint', '0.39.2'
+
+  target 'RestfulSWIFT_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

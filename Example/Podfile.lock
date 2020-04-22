@@ -1,0 +1,36 @@
+PODS:
+  - PromiseKit (6.13.0):
+    - PromiseKit/CorePromise (= 6.13.0)
+    - PromiseKit/Foundation (= 6.13.0)
+    - PromiseKit/UIKit (= 6.13.0)
+  - PromiseKit/CorePromise (6.13.0)
+  - PromiseKit/Foundation (6.13.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.0):
+    - PromiseKit/CorePromise
+  - RestfulSWIFT (0.0.1):
+    - PromiseKit (~> 6.13.0)
+  - SwiftLint (0.39.2)
+
+DEPENDENCIES:
+  - PromiseKit (= 6.13.0)
+  - RestfulSWIFT (from `../`)
+  - SwiftLint (= 0.39.2)
+
+SPEC REPOS:
+  trunk:
+    - PromiseKit
+    - SwiftLint
+
+EXTERNAL SOURCES:
+  RestfulSWIFT:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PromiseKit: c8668a559f26c98277a543192c51bc38dd2dfc76
+  RestfulSWIFT: 556f90fc74e2dcd2f6760384ea06544c696b0846
+  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
+
+PODFILE CHECKSUM: 619569b6780b7a9ddd0995a9fffb4f508d9e4f51
+
+COCOAPODS: 1.9.1
