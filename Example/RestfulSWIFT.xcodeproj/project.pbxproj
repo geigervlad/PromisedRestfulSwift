@@ -27,6 +27,15 @@
 		896E4CDD2449C49B00506013 /* OAuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E4CDC2449C49B00506013 /* OAuthInterceptor.swift */; };
 		89BA4C1A2450568700FA4CEA /* PromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C192450568700FA4CEA /* PromiseTests.swift */; };
 		89BA4C2024505F5600FA4CEA /* EncodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C1F24505F5600FA4CEA /* EncodableTests.swift */; };
+		89BA4C22245064E300FA4CEA /* RestfulReadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C21245064E300FA4CEA /* RestfulReadTests.swift */; };
+		89BA4C24245064F200FA4CEA /* RestfulWriteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C23245064F200FA4CEA /* RestfulWriteTests.swift */; };
+		89BA4C26245064FD00FA4CEA /* RestfulWriteErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C25245064FC00FA4CEA /* RestfulWriteErrorTests.swift */; };
+		89BA4C282450650A00FA4CEA /* RestfulUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C272450650A00FA4CEA /* RestfulUpdateTests.swift */; };
+		89BA4C2A2450651D00FA4CEA /* RestfulUpdateErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C292450651D00FA4CEA /* RestfulUpdateErrorTests.swift */; };
+		89BA4C2C2450653100FA4CEA /* RestfulDeleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C2B2450653100FA4CEA /* RestfulDeleteTests.swift */; };
+		89BA4C2E2450654400FA4CEA /* RestfulUploadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C2D2450654400FA4CEA /* RestfulUploadTests.swift */; };
+		89BA4C302450655900FA4CEA /* HTTPToolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C2F2450655900FA4CEA /* HTTPToolsTests.swift */; };
+		89BA4C3524506AE100FA4CEA /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C3424506AE100FA4CEA /* ValidationError.swift */; };
 		89C89011244ECEDF00126340 /* RestfulWriteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C89010244ECEDF00126340 /* RestfulWriteError.swift */; };
 		89C89013244ECEFE00126340 /* RestfulUpdateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C89012244ECEFE00126340 /* RestfulUpdateError.swift */; };
 		89F306DB2447229900B88E83 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F306DA2447229900B88E83 /* Encodable.swift */; };
@@ -75,6 +84,15 @@
 		89BA4C192450568700FA4CEA /* PromiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseTests.swift; sourceTree = "<group>"; };
 		89BA4C1D2450581800FA4CEA /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89BA4C1F24505F5600FA4CEA /* EncodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableTests.swift; sourceTree = "<group>"; };
+		89BA4C21245064E300FA4CEA /* RestfulReadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulReadTests.swift; sourceTree = "<group>"; };
+		89BA4C23245064F200FA4CEA /* RestfulWriteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulWriteTests.swift; sourceTree = "<group>"; };
+		89BA4C25245064FC00FA4CEA /* RestfulWriteErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulWriteErrorTests.swift; sourceTree = "<group>"; };
+		89BA4C272450650A00FA4CEA /* RestfulUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulUpdateTests.swift; sourceTree = "<group>"; };
+		89BA4C292450651D00FA4CEA /* RestfulUpdateErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulUpdateErrorTests.swift; sourceTree = "<group>"; };
+		89BA4C2B2450653100FA4CEA /* RestfulDeleteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulDeleteTests.swift; sourceTree = "<group>"; };
+		89BA4C2D2450654400FA4CEA /* RestfulUploadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulUploadTests.swift; sourceTree = "<group>"; };
+		89BA4C2F2450655900FA4CEA /* HTTPToolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPToolsTests.swift; sourceTree = "<group>"; };
+		89BA4C3424506AE100FA4CEA /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		89C89010244ECEDF00126340 /* RestfulWriteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulWriteError.swift; sourceTree = "<group>"; };
 		89C89012244ECEFE00126340 /* RestfulUpdateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulUpdateError.swift; sourceTree = "<group>"; };
 		89F306DA2447229900B88E83 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
@@ -229,7 +247,7 @@
 				89BA4C122450563400FA4CEA /* Tools */,
 				89BA4C112450562D00FA4CEA /* Restful */,
 				89BA4C102450562000FA4CEA /* Extensions */,
-				89BA4C0A245055B300FA4CEA /* Info.plist */,
+				89BA4C3324506AAA00FA4CEA /* Helpers */,
 			);
 			path = RestfulSWIFT_Tests;
 			sourceTree = "<group>";
@@ -258,6 +276,7 @@
 		89BA4C122450563400FA4CEA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				89BA4C2F2450655900FA4CEA /* HTTPToolsTests.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -272,6 +291,7 @@
 		89BA4C142450564300FA4CEA /* Upload */ = {
 			isa = PBXGroup;
 			children = (
+				89BA4C2D2450654400FA4CEA /* RestfulUploadTests.swift */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -279,6 +299,7 @@
 		89BA4C152450564C00FA4CEA /* Delete */ = {
 			isa = PBXGroup;
 			children = (
+				89BA4C2B2450653100FA4CEA /* RestfulDeleteTests.swift */,
 			);
 			path = Delete;
 			sourceTree = "<group>";
@@ -286,6 +307,8 @@
 		89BA4C162450565000FA4CEA /* Update */ = {
 			isa = PBXGroup;
 			children = (
+				89BA4C272450650A00FA4CEA /* RestfulUpdateTests.swift */,
+				89BA4C292450651D00FA4CEA /* RestfulUpdateErrorTests.swift */,
 			);
 			path = Update;
 			sourceTree = "<group>";
@@ -293,6 +316,8 @@
 		89BA4C172450565500FA4CEA /* Write */ = {
 			isa = PBXGroup;
 			children = (
+				89BA4C23245064F200FA4CEA /* RestfulWriteTests.swift */,
+				89BA4C25245064FC00FA4CEA /* RestfulWriteErrorTests.swift */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -300,8 +325,18 @@
 		89BA4C182450565900FA4CEA /* Read */ = {
 			isa = PBXGroup;
 			children = (
+				89BA4C21245064E300FA4CEA /* RestfulReadTests.swift */,
 			);
 			path = Read;
+			sourceTree = "<group>";
+		};
+		89BA4C3324506AAA00FA4CEA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				89BA4C3424506AE100FA4CEA /* ValidationError.swift */,
+				89BA4C0A245055B300FA4CEA /* Info.plist */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		89C89014244ED0BB00126340 /* Read */ = {
@@ -595,8 +630,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89BA4C2E2450654400FA4CEA /* RestfulUploadTests.swift in Sources */,
+				89BA4C282450650A00FA4CEA /* RestfulUpdateTests.swift in Sources */,
+				89BA4C26245064FD00FA4CEA /* RestfulWriteErrorTests.swift in Sources */,
 				89BA4C1A2450568700FA4CEA /* PromiseTests.swift in Sources */,
+				89BA4C24245064F200FA4CEA /* RestfulWriteTests.swift in Sources */,
+				89BA4C2A2450651D00FA4CEA /* RestfulUpdateErrorTests.swift in Sources */,
 				89BA4C2024505F5600FA4CEA /* EncodableTests.swift in Sources */,
+				89BA4C3524506AE100FA4CEA /* ValidationError.swift in Sources */,
+				89BA4C2C2450653100FA4CEA /* RestfulDeleteTests.swift in Sources */,
+				89BA4C22245064E300FA4CEA /* RestfulReadTests.swift in Sources */,
+				89BA4C302450655900FA4CEA /* HTTPToolsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,7 +834,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = TQG3K9WNMD;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = RestfulSWIFT_Tests/Info.plist;
+				INFOPLIST_FILE = RestfulSWIFT_Tests/Helpers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -818,7 +862,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TQG3K9WNMD;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = RestfulSWIFT_Tests/Info.plist;
+				INFOPLIST_FILE = RestfulSWIFT_Tests/Helpers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
