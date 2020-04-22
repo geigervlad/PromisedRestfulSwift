@@ -11,7 +11,7 @@ import PromiseKit
 public struct OAuthClientConfiguration: Decodable {
     var tokenUri: URL
     var clientId: String
-    var clientSecret: String
+    var clientSecret: String?
 }
 
 public struct OAuthData: Decodable {
@@ -64,11 +64,11 @@ public class OAuthInterceptor: Interceptor, RestfulWrite {
         guard let loginData = self.loginData else {
             return Promise(error: AuthenticationErrors.notAuthenticated)
         }
-        guard loginData.accessTokenExpiresAt < Date() else {
-            return Promise { $0.fulfill(loginData.accessToken) }
-        }
         guard !loginData.accessToken.isEmpty else {
             return Promise(error: AuthenticationErrors.notAuthenticated)
+        }
+        guard loginData.accessTokenExpiresAt < Date() else {
+            return Promise { $0.fulfill(loginData.accessToken) }
         }
         guard !loginData.refreshToken.isEmpty else {
             return Promise(error: AuthenticationErrors.notAuthenticated)
@@ -90,7 +90,7 @@ public class OAuthInterceptor: Interceptor, RestfulWrite {
         if !configuration.clientId.isEmpty {
             queryItems.append(URLQueryItem(name: "client_id", value: configuration.clientId))
         }
-        if !configuration.clientSecret.isEmpty {
+        if let clientSecret = configuration.clientSecret, !clientSecret.isEmpty {
             queryItems.append(URLQueryItem(name: "client_secret", value: configuration.clientSecret))
         }
         guard var urlComponent = URLComponents(url: configuration.tokenUri, resolvingAgainstBaseURL: false) else {
