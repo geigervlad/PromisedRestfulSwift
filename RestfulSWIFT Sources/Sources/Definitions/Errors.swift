@@ -21,6 +21,7 @@ public enum DecodingErrors: Error {
 
 public enum ValidationErrors: Error {
     case invalidHttpCode(code: Int)
+    case withServerError(error: Decodable)
 }
 
 public enum PromiseErrors: Error {

@@ -22,6 +22,7 @@
 		89119DF924474CB900276EE3 /* RestfulUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89119DF824474CB900276EE3 /* RestfulUpload.swift */; };
 		89119DFC2448296300276EE3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89119DFB2448296300276EE3 /* Constants.swift */; };
 		89119DFE24482A6E00276EE3 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89119DFD24482A6E00276EE3 /* Promise.swift */; };
+		8934CCBC245801BE0042D89E /* HTTPToolsValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8934CCBB245801BE0042D89E /* HTTPToolsValidation.swift */; };
 		8959AD62244991A1000F05E8 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8959AD61244991A1000F05E8 /* Interceptor.swift */; };
 		896E4CD92449C3F500506013 /* EmptyInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E4CD82449C3F500506013 /* EmptyInterceptor.swift */; };
 		896E4CDD2449C49B00506013 /* OAuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E4CDC2449C49B00506013 /* OAuthInterceptor.swift */; };
@@ -75,6 +76,7 @@
 		89119DFB2448296300276EE3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		89119DFD24482A6E00276EE3 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 		89119DFF2448368C00276EE3 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
+		8934CCBB245801BE0042D89E /* HTTPToolsValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPToolsValidation.swift; sourceTree = "<group>"; };
 		8959AD61244991A1000F05E8 /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
 		896E4CD82449C3F500506013 /* EmptyInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyInterceptor.swift; sourceTree = "<group>"; };
 		896E4CDC2449C49B00506013 /* OAuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthInterceptor.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				89119DED24474A2100276EE3 /* HTTPTools.swift */,
+				8934CCBB245801BE0042D89E /* HTTPToolsValidation.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				8959AD62244991A1000F05E8 /* Interceptor.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				89C89013244ECEFE00126340 /* RestfulUpdateError.swift in Sources */,
+				8934CCBC245801BE0042D89E /* HTTPToolsValidation.swift in Sources */,
 				89119DFE24482A6E00276EE3 /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

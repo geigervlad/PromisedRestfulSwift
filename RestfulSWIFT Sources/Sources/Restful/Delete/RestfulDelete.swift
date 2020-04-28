@@ -13,6 +13,11 @@ public protocol RestfulDelete {
     /// Provides capability to intercept a request and include for example an Authorization Header inside
     var interceptor: Interceptor { get }
     
+    /// Executes a DELETE request on a resource: solutions/{ID}
+    /// - Parameter url: the url with the identification of the resource
+    /// - Returns: a Promise which resolves if the request was successful
+    func delete(url: URL) -> Promise<Void>
+    
 }
 
 public extension RestfulDelete {
@@ -21,9 +26,6 @@ public extension RestfulDelete {
         return EmptyInterceptor()
     }
     
-    /// Executes a DELETE request on a resource: solutions/{ID}
-    /// - Parameter url: the url with the identification of the resource
-    /// - Returns: a Promise which resolves if the request was successful
     func delete(url: URL) -> Promise<Void> {
         return Promise(error: GeneralErrors.functionNotAvailableInThisVersion)
     }

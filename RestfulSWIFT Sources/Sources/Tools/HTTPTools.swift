@@ -13,7 +13,7 @@ public protocol HTTPTools {
 }
 
 public extension HTTPTools {
-        
+    
     func executeRequestAsPromise(_ request: URLRequest) -> Promise<HTTPResponseType> {
         return Promise { resolver in
             let task = URLSession.shared.dataTask(with: request) {

@@ -9,5 +9,9 @@
 import PromiseKit
 
 public protocol Interceptor {
+    
+    /// Intercepts a URL requests before its execution
+    /// Can be used for adding for example: Authorization Header
+    /// - Parameter request: the URLRequest
     func intercept(_ request: URLRequest) -> Promise<URLRequest>
 }
