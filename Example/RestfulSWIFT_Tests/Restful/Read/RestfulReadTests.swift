@@ -17,6 +17,7 @@ class RestfulReadTests: XCTestCase, RestfulRead {
     
     override func setUp() {
         exampleUri = URL(string: "https://testExample.test")!
+        response = nil
     }
     
     override func tearDown() {

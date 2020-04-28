@@ -66,10 +66,8 @@ public extension HTTPTools {
         let potentialHeaderValue = httpResponse.allHeaderFields.first { (arg0) -> Bool in
             let (key, _) = arg0
             return key.description == "Location"
-        }.map {
-            $0.value
         }
-        if let headerValue = potentialHeaderValue as? String {
+        if let headerValue = potentialHeaderValue?.value as? String {
             return headerValue
         } else {
             throw DecodingErrors.failedToExtractLocationHeader
