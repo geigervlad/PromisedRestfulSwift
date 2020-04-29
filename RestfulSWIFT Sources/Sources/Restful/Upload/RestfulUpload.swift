@@ -52,7 +52,7 @@ public protocol RestfulUpload: HTTPTools {
 public extension RestfulUpload {
     
     var interceptor: Interceptor {
-        return EmptyInterceptor()
+        return defaultInterceptor
     }
     
     func upload(_ data: Data, _ url: URL, _ onProgressUpdate: @escaping (Progress) -> Void) -> Promise<Void> {

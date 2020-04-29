@@ -31,7 +31,7 @@ public protocol RestfulUpdateError: HTTPToolsValidation {
 public extension RestfulUpdateError {
     
     var interceptor: Interceptor {
-        return EmptyInterceptor()
+        return defaultInterceptor
     }
     
     func update<T: Encodable>(url: URL, entity: T) -> Promise<Void> {

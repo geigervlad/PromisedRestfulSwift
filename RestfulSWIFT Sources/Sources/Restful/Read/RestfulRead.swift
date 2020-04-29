@@ -26,7 +26,7 @@ public protocol RestfulRead: HTTPTools {
 public extension RestfulRead {
     
     var interceptor: Interceptor {
-        return EmptyInterceptor()
+        return defaultInterceptor
     }
     
     func read<U: Decodable>(url: URL) -> Promise<U> {

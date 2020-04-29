@@ -8,6 +8,8 @@
 
 import PromiseKit
 
+public var defaultInterceptor = EmptyInterceptor()
+
 public protocol Interceptor {
     
     /// Intercepts a URL requests before its execution

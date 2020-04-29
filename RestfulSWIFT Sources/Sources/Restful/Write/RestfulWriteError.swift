@@ -36,7 +36,7 @@ public protocol RestfulWriteError: HTTPToolsValidation {
 public extension RestfulWriteError {
     
     var interceptor: Interceptor {
-        return EmptyInterceptor()
+        return defaultInterceptor
     }
     
     func write<U: Decodable>(url: URL) -> Promise<U> {

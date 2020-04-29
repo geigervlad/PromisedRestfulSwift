@@ -23,7 +23,7 @@ public protocol RestfulDelete: HTTPTools {
 public extension RestfulDelete {
     
     var interceptor: Interceptor {
-        return EmptyInterceptor()
+        return defaultInterceptor
     }
     
     func delete(url: URL) -> Promise<Void> {
