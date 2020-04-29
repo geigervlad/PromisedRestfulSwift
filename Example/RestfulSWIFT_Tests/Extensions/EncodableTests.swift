@@ -18,7 +18,7 @@ struct TestStructureEncodable: Encodable {
 
 class EncodableTests: XCTestCase {
             
-    func testJsonTransformation() {
+    func testJsonTransformationSuccess() {
         let structure = TestStructureEncodable(string: "I am a test data", int: 1512, bool: true )
         let expectedString = "{\"string\":\"I am a test data\",\"int\":1512,\"bool\":true}"
         let expectation = XCTestExpectation()
@@ -31,5 +31,19 @@ class EncodableTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 1)
     }
+    
+      func testJsonTransformationFailure() {
+          let structure = TestStructureEncodable(string: "I am a test data", int: 1512, bool: true )
+          let expectedString = "{\"string\":\"I am a  test data\",\"int\":1512,\"bool\":true}"
+          let expectation = XCTestExpectation()
+          structure.toJsonData().done { actualData in
+              let actualString = String(data: actualData, encoding: .utf8)
+              XCTAssertNotEqual(actualString, expectedString)
+              expectation.fulfill()
+          }.catch { error in
+              XCTFail("ERROR: Unexpected error: \(error) occured")
+          }
+          wait(for: [expectation], timeout: 1)
+      }
     
 }

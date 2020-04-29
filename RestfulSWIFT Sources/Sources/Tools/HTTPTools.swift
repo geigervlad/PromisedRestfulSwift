@@ -97,7 +97,8 @@ public extension HTTPTools {
     
     func toValidatedLocation(_ response: HTTPResponseType) throws -> String {
         let errorValidatedResponse = try toErrorValidated(response)
-        guard let httpResponse = errorValidatedResponse.1 as? HTTPURLResponse else {
+        let validatedResponse = try toStatusCodeValidated(errorValidatedResponse)
+        guard let httpResponse = validatedResponse.1 as? HTTPURLResponse else {
             throw DecodingErrors.failedToTransformToHTTPURLResponse
         }
         let potentialHeaderValue = httpResponse.allHeaderFields.first { (arg0) -> Bool in
