@@ -46,7 +46,7 @@ public protocol RestfulUpload: HTTPTools {
     ///   - onProgressUpdate: A function to react to the live progress of the upload
     /// - Returns: A Promise which resolves with the HTTP Location Header Value  if the request is successfully executed
     func uploadAndExtractLocation<T: Encodable>(_ data: Data, _ metadata: T, _ url: URL, _ onProgressUpdate: @escaping (Progress) -> Void) -> Promise<String>
-        
+    
 }
 
 public extension RestfulUpload {
@@ -60,15 +60,15 @@ public extension RestfulUpload {
     }
     
     func upload<T: Encodable>(_ data: Data, _ metadata: T, _ url: URL, _ onProgressUpdate: @escaping (Progress) -> Void) -> Promise<Void> {
-           return Promise(error: GeneralErrors.functionNotAvailableInThisVersion)
-       }
+        return Promise(error: GeneralErrors.functionNotAvailableInThisVersion)
+    }
     
     func uploadAndExtractLocation(_ data: Data, _ url: URL, _ onProgressUpdate: @escaping (Progress) -> Void) -> Promise<String> {
-           return Promise(error: GeneralErrors.functionNotAvailableInThisVersion)
-       }
+        return Promise(error: GeneralErrors.functionNotAvailableInThisVersion)
+    }
     
     func uploadAndExtractLocation<T: Encodable>(_ data: Data, _ metadata: T, _ url: URL, _ onProgressUpdate: @escaping (Progress) -> Void) -> Promise<String> {
-           return Promise(error: GeneralErrors.functionNotAvailableInThisVersion)
-       }
+        return Promise(error: GeneralErrors.functionNotAvailableInThisVersion)
+    }
     
 }
