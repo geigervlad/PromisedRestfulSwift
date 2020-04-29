@@ -10,7 +10,7 @@ import PromiseKit
 
 // MARK: Definition
 
-public protocol HTTPTools {
+public protocol HTTPTools: Interceptor {
     
     /// Executes a URLRequest within a Promise resolved with the HTTPResponse
     /// - Parameter request: The request to execute

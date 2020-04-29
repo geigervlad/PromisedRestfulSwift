@@ -12,9 +12,6 @@ import PromiseKit
 
 public protocol RestfulUpdate: HTTPTools {
     
-    /// Provides capability to intercept a request and include for example an Authorization Header inside
-    var interceptor: Interceptor { get }
-    
     /// Executes a PUT request on a resource: /solutions with the entity data
     /// - Parameter url: the url of the resource to update
     /// - Returns: a promise which resolves if the update was successful
@@ -30,10 +27,6 @@ public protocol RestfulUpdate: HTTPTools {
 // MARK: Default Implementation
 
 public extension RestfulUpdate {
-    
-    var interceptor: Interceptor {
-        return defaultInterceptor
-    }
     
     func update<T: Encodable>(url: URL, entity: T) -> Promise<Void> {
         var request = URLRequest(url: url)

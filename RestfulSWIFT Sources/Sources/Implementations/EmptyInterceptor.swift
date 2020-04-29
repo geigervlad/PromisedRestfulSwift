@@ -8,7 +8,7 @@
 
 import PromiseKit
 
-public class EmptyInterceptor: Interceptor {
+public class EmptyInterceptor: InterceptorType {
     
     public init() {
         // unused

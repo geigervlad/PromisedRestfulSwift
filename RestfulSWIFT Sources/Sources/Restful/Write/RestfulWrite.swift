@@ -12,9 +12,6 @@ import PromiseKit
 
 public protocol RestfulWrite: HTTPTools {
     
-    /// Provides capability to intercept a request and include for example an Authorization Header inside
-    var interceptor: Interceptor { get }
-    
     /// Executes a POST request on a resource with no body: url encoding
     /// - Parameter url: the url with the query parameters
     /// - Returns: A promise which resolves if the request was successful and contains the server response
@@ -34,10 +31,6 @@ public protocol RestfulWrite: HTTPTools {
 // MARK: Default Implementation
 
 public extension RestfulWrite {
-    
-    var interceptor: Interceptor {
-        return defaultInterceptor
-    }
     
     func write<U: Decodable>(url: URL) -> Promise<U> {
         var request = URLRequest(url: url)

@@ -44,7 +44,7 @@ public struct OAuthData: Decodable {
     
 }
 
-public class OAuthInterceptor: Interceptor, RestfulWrite {
+public class OAuthInterceptor: InterceptorType, RestfulWrite {
     
     private let configuration: OAuthClientConfiguration
     private var loginData: OAuthData?

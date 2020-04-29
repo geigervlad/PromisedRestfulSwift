@@ -10,9 +10,6 @@ import PromiseKit
 
 public protocol RestfulUpload: HTTPTools {
     
-    /// Provides capability to intercept a request and include for example an Authorization Header inside
-    var interceptor: Interceptor { get }
-    
     /// Uploads the data stream onto the provided URL
     /// - Parameters:
     ///   - data: The data
@@ -50,11 +47,7 @@ public protocol RestfulUpload: HTTPTools {
 }
 
 public extension RestfulUpload {
-    
-    var interceptor: Interceptor {
-        return defaultInterceptor
-    }
-    
+        
     func upload(_ data: Data, _ url: URL, _ onProgressUpdate: @escaping (Progress) -> Void) -> Promise<Void> {
         return Promise(error: GeneralErrors.functionNotAvailableInThisVersion)
     }
