@@ -53,15 +53,5 @@ class PromiseTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 3)
     }
-    
-    func testPromiseIsFullfiled() {
-        let expectedData: String = "test"
-        let promise = Promise.fulfilled(expectedData)
-        promise.done { data in
-            XCTAssertEqual(data, expectedData)
-        }.catch { error in
-            XCTFail("ERROR: Unexpected error: \(error) occured")
-        }
-    }
-    
+        
 }

@@ -66,7 +66,7 @@ public class OAuthInterceptor: Interceptor, RestfulWrite {
             return Promise(error: AuthenticationErrors.notAuthenticated)
         }
         guard loginData.accessTokenExpiresAt < Date() else {
-            return Promise.fulfilled(loginData.accessToken)
+            return Promise.value(loginData.accessToken)
         }
         guard !loginData.refreshToken.isEmpty else {
             return Promise(error: AuthenticationErrors.notAuthenticated)

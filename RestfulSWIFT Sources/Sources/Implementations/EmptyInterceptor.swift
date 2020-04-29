@@ -15,7 +15,7 @@ public class EmptyInterceptor: Interceptor {
     }
     
     public func intercept(_ request: URLRequest) -> Promise<URLRequest> {
-        return Promise.fulfilled(request)
+        return Promise.value(request)
     }
     
 }
