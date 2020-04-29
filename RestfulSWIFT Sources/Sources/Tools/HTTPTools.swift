@@ -8,9 +8,47 @@
 
 import PromiseKit
 
+// MARK: Definition
+
 public protocol HTTPTools {
+    
+    /// Executes a URLRequest within a Promise resolved with the HTTPResponse
+    /// - Parameter request: The request to execute
     func executeRequestAsPromise(_ request: URLRequest) -> Promise<HTTPResponseType>
+    
+    /// Checks a HTTPResponse for Error Object and if found, a specific Exception gets thrown
+    /// - Parameter response: the HTTPResponse to check
+    func toErrorValidated(_ response: HTTPResponseType) throws -> HTTPResponseType
+    
+    /// Checks a HTTPResponse for Valid HTTP Status Codes and if not valid, a specific Exception gets thrown
+    /// - Parameter response: the HTTPResponse to check
+    func toStatusCodeValidated(_ response: HTTPResponseType) throws -> HTTPResponseType
+    
+    /// Checks a HTTPResponse for Error Object and for Valid HTTP Status Codes and if any of the checks is not passed, a specific Exception gets thrown
+    /// - Parameter response: the HTTPResponse to check
+    func toStatusCodeErrorValidated(_ response: HTTPResponseType) throws -> HTTPResponseType
+    
+    /// Checks a HTTPResponse for Data and tries to transforms it to expected Decodable Structure
+    /// - Parameter response: the HTTPResponse to check
+    func toEntity<T: Decodable>(_ response: HTTPResponseType) throws -> T
+    
+    /// Checks a HTTPResponse for StatusCode, Error, Data and tries to transforms the data to expected Decodable Structure
+    /// - Parameter response: the HTTPResponse to check
+    func toValidatedEntity<T: Decodable>(_ response: HTTPResponseType) throws -> T
+    
+    /// Checks a HTTPResponse for StatusCode, Error, and tries to extract the value of the HTTP Location Header
+    /// - Parameter response: the HTTPResponse to check
+    func toValidatedLocation(_ response: HTTPResponseType) throws -> String
+    
+    /// Builds a POST URLRequest with JSON Encoding
+    /// - Parameters:
+    ///   - url: The URL where to add the JSON Body Data
+    ///   - entity: The entity which contains the data
+    func buildPostRequest<T: Encodable>(_ url: URL, _ entity: T) -> Promise<URLRequest>
+    
 }
+
+// MARK: Default Implementation
 
 public extension HTTPTools {
     
@@ -40,6 +78,16 @@ public extension HTTPTools {
         return response
     }
     
+    func toStatusCodeErrorValidated(_ response: HTTPResponseType) throws -> HTTPResponseType {
+        guard let httpResponse = response.1 as? HTTPURLResponse else {
+            throw DecodingErrors.failedToTransformToHTTPURLResponse
+        }
+        guard validHttpStatusCodesBadRequest.contains(httpResponse.statusCode) else {
+            throw ValidationErrors.invalidHttpCode(code: httpResponse.statusCode)
+        }
+        return response
+    }
+    
     func toEntity<T: Decodable>(_ response: HTTPResponseType) throws -> T {
         guard let data = response.0 else {
             throw DecodingErrors.failedToExtractData
@@ -48,13 +96,9 @@ public extension HTTPTools {
         return try decoder.decode(T.self, from: data)
     }
     
-    func toErrorAndStatusCodeValidated(_ response: HTTPResponseType) throws -> HTTPResponseType {
-        let validatedResponse = try toErrorValidated(response)
-        return try toStatusCodeValidated(validatedResponse)
-    }
-    
     func toValidatedEntity<T: Decodable>(_ response: HTTPResponseType) throws -> T {
-        let validatedResponse = try toErrorAndStatusCodeValidated(response)
+        let errorValidatedResponse = try toErrorValidated(response)
+        let validatedResponse = try toStatusCodeValidated(errorValidatedResponse)
         return try toEntity(validatedResponse)
     }
     

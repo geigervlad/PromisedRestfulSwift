@@ -10,7 +10,7 @@ import PromiseKit
 
 // MARK: Definition
 
-public protocol RestfulUpdate {
+public protocol RestfulUpdate: HTTPTools {
     
     /// Provides capability to intercept a request and include for example an Authorization Header inside
     var interceptor: Interceptor { get }
@@ -36,11 +36,21 @@ public extension RestfulUpdate {
     }
     
     func update<T: Encodable>(url: URL, entity: T) -> Promise<Void> {
-        return Promise(error: GeneralErrors.functionNotAvailableInThisVersion)
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.put.rawValue
+        return interceptor.intercept(request)
+            .then(executeRequestAsPromise)
+            .map(toErrorValidated)
+            .map(toStatusCodeValidated)
+            .asVoid()
     }
     
     func update<T: Encodable, U: Decodable>(url: URL, entity: T) -> Promise<U> {
-        return Promise(error: GeneralErrors.functionNotAvailableInThisVersion)
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.put.rawValue
+        return interceptor.intercept(request)
+            .then(executeRequestAsPromise)
+            .map(toValidatedEntity)
     }
     
 }

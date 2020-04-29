@@ -8,17 +8,26 @@
 
 import Foundation
 
+//MARK: Definition
+
 public protocol HTTPToolsValidation: HTTPTools {
     
     /// Defines the Type of the Error Object in case of a server error, for example: validation
     associatedtype ErrorObjectType: Decodable
     
+    func toValidatedEntityWithError<T: Decodable>(_ response: HTTPResponseType) throws -> T
+    
+    func toValidatedError(_ response: HTTPResponseType) throws
+    
+    func toValidatedLocationWithError(_ response: HTTPResponseType) throws -> String
 }
+
+// MARK: Default Implementation
 
 public extension HTTPToolsValidation {
     
     func toValidatedEntityWithError<T: Decodable>(_ response: HTTPResponseType) throws -> T {
-        let validatedResponse = try toErrorValidated(response)
+        let validatedResponse = try toStatusCodeErrorValidated(response)
         do {
             return try toEntity(validatedResponse)
         } catch {
@@ -31,8 +40,21 @@ public extension HTTPToolsValidation {
         }
     }
     
+    func toValidatedError(_ response: HTTPResponseType) throws {
+        do {
+            _ = try toStatusCodeErrorValidated(response)
+        } catch {
+            guard let data = response.0 else {
+                throw DecodingErrors.failedToExtractData
+            }
+            let decoder = JSONDecoder()
+            let errorData = try? decoder.decode(ErrorObjectType.self, from: data)
+            throw ValidationErrors.withServerError(error: errorData)
+        }
+    }
+    
     func toValidatedLocationWithError(_ response: HTTPResponseType) throws -> String {
-        let errorValidatedResponse = try toErrorValidated(response)
+        let errorValidatedResponse = try toStatusCodeErrorValidated(response)
         guard let httpResponse = errorValidatedResponse.1 as? HTTPURLResponse else {
             throw DecodingErrors.failedToTransformToHTTPURLResponse
         }

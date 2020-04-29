@@ -30,14 +30,9 @@ public var validHttpStatusCodes: [Int] {
     return Array(200..<300)
 }
 
-public var validHttpStatusCodesNotFound: [Int] {
-    var array: [Int] = validHttpStatusCodes
-    array.append(404)
-    return array
-}
-
 public var validHttpStatusCodesBadRequest: [Int] {
     var array: [Int] = validHttpStatusCodes
-    array.append(400)
+    array.append(400) // Bad Request
+    array.append(409) // Conflict
     return array
 }

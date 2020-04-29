@@ -35,11 +35,19 @@ public extension RestfulUpdateError {
     }
     
     func update<T: Encodable>(url: URL, entity: T) -> Promise<Void> {
-        return Promise(error: GeneralErrors.functionNotAvailableInThisVersion)
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.put.rawValue
+        return interceptor.intercept(request)
+            .then(executeRequestAsPromise)
+            .map(toValidatedError)
     }
     
     func update<T: Encodable, U: Decodable>(url: URL, entity: T) -> Promise<U> {
-        return Promise(error: GeneralErrors.functionNotAvailableInThisVersion)
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.put.rawValue
+        return interceptor.intercept(request)
+            .then(executeRequestAsPromise)
+            .map(toValidatedEntityWithError)
     }
     
 }
