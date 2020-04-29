@@ -55,9 +55,7 @@ public class OAuthInterceptor: Interceptor, RestfulWrite {
     }
     
     public func intercept(_ request: URLRequest) -> Promise<URLRequest> {
-        return getValidAccessToken().map { token in
-            self.injectToken(token, request)
-        }
+        return getValidAccessToken().map { self.injectToken($0, request) }
     }
     
     private func getValidAccessToken() -> Promise<String> {

@@ -41,7 +41,7 @@ public extension RestfulWriteError {
     
     func write<U: Decodable>(url: URL) -> Promise<U> {
         var request = URLRequest(url: url)
-        request.httpMethod = HTTPMethod.post.rawValue
+        request.httpMethod = HTTPMethods.post.rawValue
         return interceptor.intercept(request)
             .then(executeRequestAsPromise)
             .map(toValidatedEntityWithError)

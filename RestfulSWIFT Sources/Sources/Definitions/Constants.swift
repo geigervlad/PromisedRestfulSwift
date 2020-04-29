@@ -11,11 +11,18 @@ import Foundation
 public typealias HTTPHeadersType = [String: String]
 public typealias HTTPResponseType = (Data?, URLResponse?, Error?)
 
-public enum HTTPMethod: String {
+public enum HTTPMethods: String {
     case get     = "GET"
     case post    = "POST"
     case put     = "PUT"
     case delete  = "DELETE"
+}
+
+public enum HTTPStatusCodes: Int {
+    case badRequest = 400
+    case conflict = 409
+    case forbidden = 403
+    case unauthorized = 401
 }
 
 public enum OAuthGrantTypes: String {
@@ -32,7 +39,7 @@ public var validHttpStatusCodes: [Int] {
 
 public var validHttpStatusCodesBadRequest: [Int] {
     var array: [Int] = validHttpStatusCodes
-    array.append(400) // Bad Request
-    array.append(409) // Conflict
+    array.append(HTTPStatusCodes.badRequest.rawValue)
+    array.append(HTTPStatusCodes.conflict.rawValue)
     return array
 }

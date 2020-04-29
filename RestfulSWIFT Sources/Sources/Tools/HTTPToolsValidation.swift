@@ -8,17 +8,28 @@
 
 import Foundation
 
-//MARK: Definition
+// MARK: Definition
 
 public protocol HTTPToolsValidation: HTTPTools {
     
     /// Defines the Type of the Error Object in case of a server error, for example: validation
     associatedtype ErrorObjectType: Decodable
     
+    /// Checks a HTTPResponse for StatusCode, Error, Data and tries to transforms the data to expected Decodable Structure
+    /// In case of HTTP Status Codes Bad Request(400) or Conflict(409) the server response gets decoded with the defined error object type
+    /// - Parameter response: the HTTPResponse to check
+    /// - Returns: The Decoded Entity
     func toValidatedEntityWithError<T: Decodable>(_ response: HTTPResponseType) throws -> T
     
+    /// Checks a HTTPResponse for StatusCode, Error
+    /// In case of HTTP Status Codes Bad Request(400) or Conflict(409) the server response gets decoded with the defined error object type
+    /// - Parameter response: the HTTPResponse to check
     func toValidatedError(_ response: HTTPResponseType) throws
     
+    /// Checks a HTTPResponse for StatusCode, Error, and tries to extract the value of the HTTP Location Header
+    /// /// In case of HTTP Status Codes Bad Request(400) or Conflict(409) the server response gets decoded with the defined error object type
+    /// - Parameter response: the HTTPResponse to check
+    /// - Returns: The Value of the Location Header
     func toValidatedLocationWithError(_ response: HTTPResponseType) throws -> String
 }
 
@@ -27,50 +38,41 @@ public protocol HTTPToolsValidation: HTTPTools {
 public extension HTTPToolsValidation {
     
     func toValidatedEntityWithError<T: Decodable>(_ response: HTTPResponseType) throws -> T {
-        let validatedResponse = try toStatusCodeErrorValidated(response)
         do {
-            return try toEntity(validatedResponse)
+            return try toValidatedEntity(response)
         } catch {
-            guard let data = response.0 else {
-                throw GeneralErrors.fatal // should never occur
-            }
-            let decoder = JSONDecoder()
-            let errorData = try? decoder.decode(ErrorObjectType.self, from: data)
-            throw ValidationErrors.withServerError(error: errorData)
+            throw try extractServerError(error, response)
         }
     }
     
     func toValidatedError(_ response: HTTPResponseType) throws {
         do {
-            _ = try toStatusCodeErrorValidated(response)
+            _ = try toStatusCodeValidated(toErrorValidated(response))
         } catch {
-            guard let data = response.0 else {
-                throw DecodingErrors.failedToExtractData
-            }
-            let decoder = JSONDecoder()
-            let errorData = try? decoder.decode(ErrorObjectType.self, from: data)
-            throw ValidationErrors.withServerError(error: errorData)
+            throw try extractServerError(error, response)
         }
     }
     
     func toValidatedLocationWithError(_ response: HTTPResponseType) throws -> String {
-        let errorValidatedResponse = try toStatusCodeErrorValidated(response)
-        guard let httpResponse = errorValidatedResponse.1 as? HTTPURLResponse else {
-            throw DecodingErrors.failedToTransformToHTTPURLResponse
-        }
-        let potentialHeaderValue = httpResponse.allHeaderFields.first { (arg0) -> Bool in
-            let (key, _) = arg0
-            return key.description == "Location"
-        }
-        if let headerValue = potentialHeaderValue?.value as? String {
-            return headerValue
-        } else {
-            guard let data = response.0 else {
-                throw DecodingErrors.failedToExtractData
-            }
-            let decoder = JSONDecoder()
-            let errorData = try? decoder.decode(ErrorObjectType.self, from: data)
-            throw ValidationErrors.withServerError(error: errorData)
+        do {
+            return try toValidatedLocation(response)
+        } catch {
+            throw try extractServerError(error, response)
         }
     }
+    
+    func extractServerError(_ error: Error, _ response: HTTPResponseType) throws -> Error {
+        switch error {
+        case ValidationErrors.invalidHttpCode(let httpCode):
+            if httpCode == HTTPStatusCodes.badRequest.rawValue || httpCode == HTTPStatusCodes.conflict.rawValue {
+                let errorData: ErrorObjectType = try toEntity(response)
+                return ValidationErrors.withServerError(error: errorData)
+            } else {
+                return error
+            }
+        default:
+            return error
+        }
+    }
+    
 }

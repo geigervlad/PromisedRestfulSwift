@@ -8,7 +8,7 @@
 
 import PromiseKit
 
-public protocol RestfulDelete {
+public protocol RestfulDelete: HTTPTools {
     
     /// Provides capability to intercept a request and include for example an Authorization Header inside
     var interceptor: Interceptor { get }
@@ -27,7 +27,13 @@ public extension RestfulDelete {
     }
     
     func delete(url: URL) -> Promise<Void> {
-        return Promise(error: GeneralErrors.functionNotAvailableInThisVersion)
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethods.delete.rawValue
+        return interceptor.intercept(request)
+        .then(executeRequestAsPromise)
+        .map(toErrorValidated)
+        .map(toStatusCodeValidated)
+        .asVoid()
     }
     
 }

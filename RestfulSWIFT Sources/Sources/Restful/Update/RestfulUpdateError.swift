@@ -36,7 +36,7 @@ public extension RestfulUpdateError {
     
     func update<T: Encodable>(url: URL, entity: T) -> Promise<Void> {
         var request = URLRequest(url: url)
-        request.httpMethod = HTTPMethod.put.rawValue
+        request.httpMethod = HTTPMethods.put.rawValue
         return interceptor.intercept(request)
             .then(executeRequestAsPromise)
             .map(toValidatedError)
@@ -44,7 +44,7 @@ public extension RestfulUpdateError {
     
     func update<T: Encodable, U: Decodable>(url: URL, entity: T) -> Promise<U> {
         var request = URLRequest(url: url)
-        request.httpMethod = HTTPMethod.put.rawValue
+        request.httpMethod = HTTPMethods.put.rawValue
         return interceptor.intercept(request)
             .then(executeRequestAsPromise)
             .map(toValidatedEntityWithError)
