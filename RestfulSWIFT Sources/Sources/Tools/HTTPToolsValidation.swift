@@ -1,9 +1,9 @@
 //
 //  HTTPToolsValidation.swift
-//  RestfulSWIFT_Example
+//  RestfulSWIFT
 //
 //  Created by Vlad Geiger on 28.04.20.
-//  Copyright © 2020 CocoaPods. All rights reserved.
+//  Copyright © 2020 Vlad Geiger. All rights reserved.
 //
 
 import Foundation
