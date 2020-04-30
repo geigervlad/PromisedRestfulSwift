@@ -15,7 +15,7 @@ public extension RestfulWriteError {
     /// Executes a POST request on a resource with no body: url encoding
     /// - Parameter url: the url with the query parameters
     /// - Returns: A promise which resolves if the request was successful and contains the server response
-    func write<U: Decodable>(url: URL) -> Promise<U> {
+    func write<U: Decodable>(_ url: URL) -> Promise<U> {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethods.post.rawValue
         return interceptor.intercept(request)
@@ -26,7 +26,7 @@ public extension RestfulWriteError {
     /// Executes a POST request on a resource: /solutions with the entity data and returns the server response
     /// - Parameter url: the url for the resource to create
     /// - Returns: A promise which resolves if the request was successful and contains the server response
-    func write<T: Encodable, U: Decodable>(url: URL, entity: T) -> Promise<U> {
+    func write<T: Encodable, U: Decodable>(_ url: URL, _ entity: T) -> Promise<U> {
         return buildPostRequest(url, entity)
             .then(interceptor.intercept)
             .then(execute)
@@ -36,7 +36,7 @@ public extension RestfulWriteError {
     /// Executes a POST request on a resource: /solutions with the entity data and returns the Location Header Value
     /// - Parameter url: the url for the resource to create
     /// - Returns: A promise which resolves if the request was successful and contains the value of the HTTP Location Header
-    func writeAndExtractLocation<T: Encodable>(url: URL, entity: T) -> Promise<String> {
+    func writeAndExtractLocation<T: Encodable>(_ url: URL, _ entity: T) -> Promise<String> {
         return buildPostRequest(url, entity)
             .then(interceptor.intercept)
             .then(execute)

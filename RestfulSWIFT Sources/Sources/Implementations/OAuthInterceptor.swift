@@ -98,7 +98,7 @@ public class OAuthInterceptor: InterceptorType, RestfulWrite {
         guard let url = urlComponent.url else {
             return Promise(error: GeneralErrors.fatal)
         }
-        return write(url: url)
+        return write(url)
     }
     
     private func injectToken(_ token: String, _ request: URLRequest) -> URLRequest {

@@ -15,7 +15,7 @@ public extension RestfulDelete {
     /// Executes a DELETE request on a resource: solutions/{ID}
     /// - Parameter url: the url with the identification of the resource
     /// - Returns: a Promise which resolves if the request was successful
-    func delete(url: URL) -> Promise<Void> {
+    func delete(_ url: URL) -> Promise<Void> {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethods.delete.rawValue
         return interceptor.intercept(request)
