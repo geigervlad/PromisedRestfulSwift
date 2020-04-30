@@ -16,39 +16,7 @@ public protocol HTTPTools: Interceptor {
     /// - Parameter request: The request to execute
     /// - Returns: A Promise which resolves as soon as the request has been executed, with the HTTP Response
     func execute(_ request: URLRequest) -> Promise<HTTPResponseType>
-    
-    /// Checks a HTTPResponse for Error Object and if found, a specific Exception gets thrown
-    /// - Parameter response: the HTTPResponse to check
-    /// - Returns: The new HTTPResponse
-    func toErrorValidated(_ response: HTTPResponseType) throws -> HTTPResponseType
-    
-    /// Checks a HTTPResponse for Valid HTTP Status Codes and if not valid, a specific Exception gets thrown
-    /// - Parameter response: the HTTPResponse to check
-    /// - Returns: The new HTTPResponse
-    func toStatusCodeValidated(_ response: HTTPResponseType) throws -> HTTPResponseType
-    
-    /// Checks a HTTPResponse for Data and tries to transforms it to expected Decodable Structure
-    /// - Parameter response: the HTTPResponse to check
-    /// - Returns: The Decoded Entity
-    func toEntity<T: Decodable>(_ response: HTTPResponseType) throws -> T
-    
-    /// Checks a HTTPResponse for StatusCode, Error, Data and tries to transforms the data to expected Decodable Structure
-    /// - Parameter response: the HTTPResponse to check
-    /// - Returns: The Decoded Entity
-    func toValidatedEntity<T: Decodable>(_ response: HTTPResponseType) throws -> T
-    
-    /// Checks a HTTPResponse for StatusCode, Error, and tries to extract the value of the HTTP Location Header
-    /// - Parameter response: the HTTPResponse to check
-    /// - Returns: The Value of the Location Header
-    func toValidatedLocation(_ response: HTTPResponseType) throws -> String
-    
-    /// Builds a POST URLRequest with JSON Encoding
-    /// - Parameters:
-    ///   - url: The URL where to add the JSON Body Data
-    ///   - entity: The entity which contains the data
-    /// - Returns: The URLRequest
-    func buildPostRequest<T: Encodable>(_ url: URL, _ entity: T) -> Promise<URLRequest>
-    
+        
 }
 
 // MARK: Default Implementation
