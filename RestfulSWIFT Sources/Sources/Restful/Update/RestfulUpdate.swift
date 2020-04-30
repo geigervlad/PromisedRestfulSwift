@@ -32,7 +32,7 @@ public extension RestfulUpdate {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethods.put.rawValue
         return interceptor.intercept(request)
-            .then(executeRequestAsPromise)
+            .then(execute)
             .map(toErrorValidated)
             .map(toStatusCodeValidated)
             .asVoid()
@@ -42,7 +42,7 @@ public extension RestfulUpdate {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethods.put.rawValue
         return interceptor.intercept(request)
-            .then(executeRequestAsPromise)
+            .then(execute)
             .map(toValidatedEntity)
     }
     

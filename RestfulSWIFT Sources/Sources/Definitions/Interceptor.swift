@@ -28,4 +28,3 @@ public extension Interceptor {
 // MARK: Default Value
 
 public var defaultInterceptor: InterceptorType = EmptyInterceptor()
-

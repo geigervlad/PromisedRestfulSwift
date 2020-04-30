@@ -25,7 +25,7 @@ public extension RestfulRead {
     func read<U: Decodable>(url: URL) -> Promise<U> {
         let request = URLRequest(url: url)
         return interceptor.intercept(request)
-            .then(executeRequestAsPromise)
+            .then(execute)
             .map(toValidatedEntity)
     }
     

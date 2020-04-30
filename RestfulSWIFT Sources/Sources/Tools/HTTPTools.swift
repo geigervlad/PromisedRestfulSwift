@@ -15,7 +15,7 @@ public protocol HTTPTools: Interceptor {
     /// Executes a URLRequest within a Promise resolved with the HTTPResponse
     /// - Parameter request: The request to execute
     /// - Returns: A Promise which resolves as soon as the request has been executed, with the HTTP Response
-    func executeRequestAsPromise(_ request: URLRequest) -> Promise<HTTPResponseType>
+    func execute(_ request: URLRequest) -> Promise<HTTPResponseType>
     
     /// Checks a HTTPResponse for Error Object and if found, a specific Exception gets thrown
     /// - Parameter response: the HTTPResponse to check
@@ -55,7 +55,7 @@ public protocol HTTPTools: Interceptor {
 
 public extension HTTPTools {
     
-    func executeRequestAsPromise(_ request: URLRequest) -> Promise<HTTPResponseType> {
+    func execute(_ request: URLRequest) -> Promise<HTTPResponseType> {
         return Promise { resolver in
             let task = URLSession.shared.dataTask(with: request) {
                 resolver.fulfill(($0, $1, $2))

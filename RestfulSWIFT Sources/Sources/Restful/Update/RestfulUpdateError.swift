@@ -31,7 +31,7 @@ public extension RestfulUpdateError {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethods.put.rawValue
         return interceptor.intercept(request)
-            .then(executeRequestAsPromise)
+            .then(execute)
             .map(toValidatedError)
     }
     
@@ -39,7 +39,7 @@ public extension RestfulUpdateError {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethods.put.rawValue
         return interceptor.intercept(request)
-            .then(executeRequestAsPromise)
+            .then(execute)
             .map(toValidatedEntityWithError)
     }
     

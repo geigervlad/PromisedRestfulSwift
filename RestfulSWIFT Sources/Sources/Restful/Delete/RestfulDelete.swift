@@ -23,7 +23,7 @@ public extension RestfulDelete {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethods.delete.rawValue
         return interceptor.intercept(request)
-        .then(executeRequestAsPromise)
+        .then(execute)
         .map(toErrorValidated)
         .map(toStatusCodeValidated)
         .asVoid()

@@ -36,21 +36,21 @@ public extension RestfulWrite {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethods.post.rawValue
         return interceptor.intercept(request)
-            .then(executeRequestAsPromise)
+            .then(execute)
             .map(toValidatedEntity)
     }
     
     func write<T: Encodable, U: Decodable>(url: URL, entity: T) -> Promise<U> {
         return buildPostRequest(url, entity)
             .then(interceptor.intercept)
-            .then(executeRequestAsPromise)
+            .then(execute)
             .map(toValidatedEntity)
     }
     
     func writeAndExtractLocation<T: Encodable>(url: URL, entity: T) -> Promise<String> {
         return buildPostRequest(url, entity)
         .then(interceptor.intercept)
-        .then(executeRequestAsPromise)
+        .then(execute)
         .map(toValidatedLocation)
     }
     

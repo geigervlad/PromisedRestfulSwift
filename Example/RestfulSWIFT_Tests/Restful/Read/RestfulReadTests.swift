@@ -31,7 +31,7 @@ class RestfulReadTests: XCTestCase, RestfulRead {
         response = nil
     }
     
-    func executeRequestAsPromise(_ request: URLRequest) -> Promise<HTTPResponseType> {
+    func execute(_ request: URLRequest) -> Promise<HTTPResponseType> {
         return Promise { resolver in
             resolver.fulfill(response)
         }
