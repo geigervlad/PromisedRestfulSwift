@@ -39,7 +39,7 @@
 		89BA4C3524506AE100FA4CEA /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C3424506AE100FA4CEA /* ValidationError.swift */; };
 		89C89011244ECEDF00126340 /* RestfulWriteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C89010244ECEDF00126340 /* RestfulWriteError.swift */; };
 		89C89013244ECEFE00126340 /* RestfulUpdateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C89012244ECEFE00126340 /* RestfulUpdateError.swift */; };
-		89EDD347245994BB00172F4F /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EDD346245994BB00172F4F /* Interceptor.swift */; };
+		89EDD347245994BB00172F4F /* Intercepting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EDD346245994BB00172F4F /* Intercepting.swift */; };
 		89F306DB2447229900B88E83 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F306DA2447229900B88E83 /* Encodable.swift */; };
 		89F306DE244722EE00B88E83 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F306DD244722EE00B88E83 /* Errors.swift */; };
 		F43C84322B0DDE691B4CB56C /* (null) in Frameworks */ = {isa = PBXBuildFile; };
@@ -98,7 +98,7 @@
 		89BA4C3424506AE100FA4CEA /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		89C89010244ECEDF00126340 /* RestfulWriteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulWriteError.swift; sourceTree = "<group>"; };
 		89C89012244ECEFE00126340 /* RestfulUpdateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulUpdateError.swift; sourceTree = "<group>"; };
-		89EDD346245994BB00172F4F /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
+		89EDD346245994BB00172F4F /* Intercepting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intercepting.swift; sourceTree = "<group>"; };
 		89F306DA2447229900B88E83 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		89F306DD244722EE00B88E83 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		A5C853BF4E147ECDCF632B43 /* Pods-RestfulSWIFT_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestfulSWIFT_Tests.release.xcconfig"; path = "Target Support Files/Pods-RestfulSWIFT_Tests/Pods-RestfulSWIFT_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 				89119DFB2448296300276EE3 /* Constants.swift */,
 				89F306DD244722EE00B88E83 /* Errors.swift */,
 				8959AD61244991A1000F05E8 /* InterceptorType.swift */,
-				89EDD346245994BB00172F4F /* Interceptor.swift */,
+				89EDD346245994BB00172F4F /* Intercepting.swift */,
 			);
 			path = Definitions;
 			sourceTree = "<group>";
@@ -612,7 +612,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89EDD347245994BB00172F4F /* Interceptor.swift in Sources */,
+				89EDD347245994BB00172F4F /* Intercepting.swift in Sources */,
 				89119DF924474CB900276EE3 /* RestfulUpload.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				89F306DE244722EE00B88E83 /* Errors.swift in Sources */,

@@ -31,7 +31,7 @@ class RestfulReadTests: XCTestCase, RestfulRead {
         response = nil
     }
     
-    func executeRequestAsPromise(_ request: URLRequest) -> Promise<HTTPResponseType> {
+    func execute(_ request: URLRequest) -> Promise<HTTPResponseType> {
         return Promise { resolver in
             resolver.fulfill(response)
         }
@@ -39,7 +39,7 @@ class RestfulReadTests: XCTestCase, RestfulRead {
     
     func testReadFailureFatal() {
         response = (nil, nil ,GeneralErrors.fatal)
-        let promise: Promise<[String]> = read(url: exampleUri)
+        let promise: Promise<[String]> = read(exampleUri)
         let expectation = XCTestExpectation()
         promise.done { result in
             XCTFail("ERROR: Unexpected result: \(result)")
@@ -56,7 +56,7 @@ class RestfulReadTests: XCTestCase, RestfulRead {
     
     func testReadFailureFailedToTransformToHTTPURLResponse() {
         response = (nil, nil ,nil)
-        let promise: Promise<[String]> = read(url: exampleUri)
+        let promise: Promise<[String]> = read(exampleUri)
         let expectation = XCTestExpectation()
         promise.done { result in
             XCTFail("ERROR: Unexpected result: \(result)")
@@ -77,7 +77,7 @@ class RestfulReadTests: XCTestCase, RestfulRead {
                                               httpVersion: nil,
                                               headerFields: nil)
         response = (nil, httpUrlResponse, nil)
-        let promise: Promise<[String]> = read(url: exampleUri)
+        let promise: Promise<[String]> = read(exampleUri)
         let expectation = XCTestExpectation()
         promise.done { result in
             XCTFail("ERROR: Unexpected result: \(result)")
@@ -98,7 +98,7 @@ class RestfulReadTests: XCTestCase, RestfulRead {
                                               httpVersion: nil,
                                               headerFields: nil)
         response = (nil, httpUrlResponse, nil)
-        let promise: Promise<[String]> = read(url: exampleUri)
+        let promise: Promise<[String]> = read(exampleUri)
         let expectation = XCTestExpectation()
         promise.done { result in
             XCTFail("ERROR: Unexpected result: \(result)")
@@ -119,7 +119,7 @@ class RestfulReadTests: XCTestCase, RestfulRead {
                                               httpVersion: nil,
                                               headerFields: nil)
         response = (Data(), httpUrlResponse, nil)
-        let promise: Promise<[String]> = read(url: exampleUri)
+        let promise: Promise<[String]> = read(exampleUri)
         let expectation = XCTestExpectation()
         promise.done { result in
             XCTFail("ERROR: Unexpected result: \(result)")
@@ -142,7 +142,7 @@ class RestfulReadTests: XCTestCase, RestfulRead {
         let structure = TestStructureCodable(string: "I am a test data", int: 1512, bool: true )
         let data = try! JSONEncoder().encode(structure)
         response = (data, httpUrlResponse, nil)
-        let promise: Promise<TestStructureCodable> = read(url: exampleUri)
+        let promise: Promise<TestStructureCodable> = read(exampleUri)
         let expectation = XCTestExpectation()
         promise.done { result in
             XCTAssertEqual(result.string, structure.string)
