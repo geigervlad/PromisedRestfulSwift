@@ -12,16 +12,25 @@ import RestfulSWIFT_Example
 
 class RestfulWriteTests: XCTestCase, RestfulWrite {
     
+    var exampleUri: URL!
+    var response: HTTPResponseType!
+    
     override func setUp() {
-        
+        exampleUri = URL(string: "https://testExample.test")!
+        response = nil
     }
     
     override func tearDown() {
-        
+        exampleUri = nil
+        response = nil
     }
     
-    func testExample() {
-        
+    func executeRequestAsPromise(_ request: URLRequest) -> Promise<HTTPResponseType> {
+        return Promise { resolver in
+            resolver.fulfill(response)
+        }
     }
+    
+    // TODO: - here the tests
     
 }
