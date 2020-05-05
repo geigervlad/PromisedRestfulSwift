@@ -42,6 +42,7 @@
 		89EDD347245994BB00172F4F /* Intercepting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EDD346245994BB00172F4F /* Intercepting.swift */; };
 		89F306DB2447229900B88E83 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F306DA2447229900B88E83 /* Encodable.swift */; };
 		89F306DE244722EE00B88E83 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F306DD244722EE00B88E83 /* Errors.swift */; };
+		D510CC2024615C35009FFAF3 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D510CC1F24615C35009FFAF3 /* MockData.swift */; };
 		F43C84322B0DDE691B4CB56C /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		A5C853BF4E147ECDCF632B43 /* Pods-RestfulSWIFT_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestfulSWIFT_Tests.release.xcconfig"; path = "Target Support Files/Pods-RestfulSWIFT_Tests/Pods-RestfulSWIFT_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B49D14B9375E9831233AA361 /* Pods_RestfulSWIFT_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestfulSWIFT_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C099F16F1F2E15B612649578 /* Pods-RestfulSWIFT_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestfulSWIFT_Example.debug.xcconfig"; path = "Target Support Files/Pods-RestfulSWIFT_Example/Pods-RestfulSWIFT_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D510CC1F24615C35009FFAF3 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		E48BB30F7807DB2FD1FB2A88 /* Pods_RestfulSWIFT_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestfulSWIFT_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -254,6 +256,7 @@
 				89BA4C112450562D00FA4CEA /* Restful */,
 				89BA4C102450562000FA4CEA /* Extensions */,
 				89BA4C3324506AAA00FA4CEA /* Helpers */,
+				D510CC1F24615C35009FFAF3 /* MockData.swift */,
 			);
 			path = RestfulSWIFT_Tests;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89BA4C2E2450654400FA4CEA /* RestfulUploadTests.swift in Sources */,
+				D510CC2024615C35009FFAF3 /* MockData.swift in Sources */,
 				89BA4C282450650A00FA4CEA /* RestfulUpdateTests.swift in Sources */,
 				89BA4C26245064FD00FA4CEA /* RestfulWriteErrorTests.swift in Sources */,
 				89BA4C1A2450568700FA4CEA /* PromiseTests.swift in Sources */,

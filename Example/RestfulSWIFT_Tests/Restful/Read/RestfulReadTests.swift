@@ -10,12 +10,6 @@ import XCTest
 import PromiseKit
 import RestfulSWIFT_Example
 
-struct TestStructureCodable: Codable {
-    var string: String
-    var int: Int
-    var bool: Bool
-}
-
 class RestfulReadTests: XCTestCase, RestfulRead {
     
     var exampleUri: URL!
@@ -37,8 +31,10 @@ class RestfulReadTests: XCTestCase, RestfulRead {
         }
     }
     
+    // MARK: - Test for "func read<U: Decodable>(_ url: URL) -> Promise<U>"
+    
     func testReadFailureFatal() {
-        response = (nil, nil ,GeneralErrors.fatal)
+        response = (nil, nil, GeneralErrors.fatal)
         let promise: Promise<[String]> = read(exampleUri)
         let expectation = XCTestExpectation()
         promise.done { result in
@@ -55,7 +51,7 @@ class RestfulReadTests: XCTestCase, RestfulRead {
     }
     
     func testReadFailureFailedToTransformToHTTPURLResponse() {
-        response = (nil, nil ,nil)
+        response = (nil, nil, nil)
         let promise: Promise<[String]> = read(exampleUri)
         let expectation = XCTestExpectation()
         promise.done { result in
@@ -154,5 +150,4 @@ class RestfulReadTests: XCTestCase, RestfulRead {
         }
         wait(for: [expectation], timeout: 2)
     }
-    
 }
