@@ -4,7 +4,7 @@ platform :ios, '11.4'
 
 target 'RestfulSWIFT_Example' do
   
-  pod 'RestfulSWIFT', :path => '../'
+  pod 'PromisedRestfulSwift', :path => '../'
   
   pod 'PromiseKit', '6.13.0'
   
