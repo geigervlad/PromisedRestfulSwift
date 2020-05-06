@@ -20,7 +20,7 @@ The library is based on Promises, Swift Codable and Protocol Oriented Developmen
 use_frameworks!
 
 target "Change Me!" do
-  pod "RestfulSWIFT", "~> x.X.X"
+  pod "PromisedRestfulSwift", "~> x.X.X"
 end
 ```
 
