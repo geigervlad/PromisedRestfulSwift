@@ -1,5 +1,7 @@
 # RestfulSWIFT
 
+https://img.shields.io/cocoapods/v/PromisedRestfulSwift
+
 ## Description
 
 Provides [RESTFUL](https://en.wikipedia.org/wiki/Representational_state_transfer) services for SWIFT.
