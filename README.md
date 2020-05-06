@@ -1,6 +1,6 @@
 # RestfulSWIFT
 
-![alt text](https://img.shields.io/cocoapods/v/PromisedRestfulSwift "Logo Title Text 1")
+![latest cocoapods version](https://img.shields.io/cocoapods/v/PromisedRestfulSwift "latest cocoapods version") ![license](https://img.shields.io/cocoapods/l/PromisedRestfulSwift "license") ![platforms](https://img.shields.io/cocoapods/p/PromisedRestfulSwift "platforms")
 
 ## Description
 
