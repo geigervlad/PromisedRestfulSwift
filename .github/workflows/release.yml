@@ -12,7 +12,7 @@ jobs:
     steps:
 
       # set xcode version
-      - name: Set XCode Version
+      - name: Set Xcode Version
         uses: actions/checkout@master
         with:
           fetch-depth: '0'
@@ -42,9 +42,13 @@ jobs:
           tag_prefix: ""
           create_annotated_tag: true
 
+
       # Deploy to Cocoapod
-      # - name: Deploy to Cocoapod Action
-      # uses: michaelhenry/deploy-to-cocoapods-github-action@1.0.9
-      # with:
-      # # The Cocoapods Trunk Token
-      #   COCOAPODS_TRUNK_TOKEN:
+      - name: Deploy to Cocoapod Action
+        run: |
+          set -eo pipefail
+          export LIB_VERSION=$(git describe --tags `git rev-list --tags --max-count=1`)
+          pod lib lint --allow-warnings
+          pod trunk push --allow-warnings
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
