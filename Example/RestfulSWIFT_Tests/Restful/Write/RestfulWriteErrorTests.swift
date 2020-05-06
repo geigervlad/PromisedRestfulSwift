@@ -25,5 +25,4 @@ class RestfulWriteErrorTests: XCTestCase, RestfulWriteError {
     func testExample() {
         
     }
-    
 }
