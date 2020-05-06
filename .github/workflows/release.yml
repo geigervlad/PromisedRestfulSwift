@@ -39,8 +39,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           default_bump: minor
-          dry_run: false
-          create_annotated_tag: false
+          create_annotated_tag: true
 
       # Deploy to Cocoapod
       # - name: Deploy to Cocoapod Action
