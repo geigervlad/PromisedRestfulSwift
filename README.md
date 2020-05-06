@@ -28,10 +28,10 @@ end
 TODO
 
 ## Documentation
-Please check [here](Documentation/README.md)
+Please check [here](https://github.com/geigervlad/RestfulSWIFT/blob/master/Documentation/README.md)
 
 ## Change Log
-Please check [here](Changelog/README.md)
+Please check [here](https://github.com/geigervlad/RestfulSWIFT/blob/master/Changelog/README.md)
 
 ## Contribution
 -   [Vlad Geiger](https://www.linkedin.com/in/geiger-vlad-21950663)
@@ -39,4 +39,4 @@ Please check [here](Changelog/README.md)
 
 
 ## Licence
-MIT - for more information check [LICENSE](./LICENSE)
+MIT - for more information check [LICENSE](https://github.com/geigervlad/RestfulSWIFT/blob/master/LICENSE)
