@@ -12,7 +12,7 @@ jobs:
     steps:
 
       # set xcode version
-      - name: Set XCode Version
+      - name: Set Xcode Version
         uses: actions/checkout@master
         with:
           fetch-depth: '0'
