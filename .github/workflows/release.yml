@@ -1,50 +1,50 @@
-name:                              Release New Version
+name: Release New Version
 
 on:
   push:
-    branches:                      [ master ]
+    branches: [ master ]
   pull_request:
-    branches:                      [ master ]
+    branches: [ master ]
 
 jobs:
   build:
-    runs-on:                       macos-latest
+    runs-on: macos-latest
     steps:
 
       # set xcode version
-      - name:                      Set XCode Version
-        uses:                      actions/checkout@master
+      - name: Set XCode Version
+        uses: actions/checkout@master
         with:
-          fetch-depth:             '0'
-      - run:                       sudo xcode-select -s /Applications/Xcode_11.app
+          fetch-depth: '0'
+      - run: sudo xcode-select -s /Applications/Xcode_11.app
 
       # install dependencies
-      - name:                      Install Dependencies
+      - name: Install Dependencies
         run:                       |
             cd Example
             pod install --repo-update
-        shell:                     bash
+        shell: bash
 
       # validate the library
-      - name:                      Validate Library
-        uses:                      ty0x2333/cocoapods-action@master
+      - name: Validate Library
+        uses: ty0x2333/cocoapods-action@master
         with:
-          workspace:               Example/RestfulSWIFT.xcworkspace
-          scheme:                  RestfulSWIFT-Example
+          workspace: Example/RestfulSWIFT.xcworkspace
+          scheme: RestfulSWIFT-Example
           additional_build_params: -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0'
 
       # create the tag
-      - name:                      Github Tag
-        uses:                      mathieudutour/github-tag-action@v4.1
+      - name: Github Tag
+        uses: mathieudutour/github-tag-action@v4.1
         with:
-          github_token:            ${{ secrets.GITHUB_TOKEN }}
-          dry_run:                 true
-          default_bump:            minor
-          create_annotated_tag:    true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump: minor
+          dry_run: false
+          create_annotated_tag: true
 
       # Deploy to Cocoapod
-      # - name:                    Deploy to Cocoapod Action
-      # uses:                      michaelhenry/deploy-to-cocoapods-github-action@1.0.9
+      # - name: Deploy to Cocoapod Action
+      # uses: michaelhenry/deploy-to-cocoapods-github-action@1.0.9
       # with:
       # # The Cocoapods Trunk Token
       #   COCOAPODS_TRUNK_TOKEN:
