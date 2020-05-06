@@ -1,5 +1,5 @@
 Pod::Spec.new do |podspec|
-  podspec.name             = 'RestfulSWIFT'
+  podspec.name             = 'PromisedRestfulSwift'
   podspec.version          = ENV['LIB_VERSION'] || '1.0' #fallback to major version
   podspec.summary          = 'Provides a Restful API for SWIFT based on Promises.'
   podspec.homepage         = 'https://github.com/geigervlad/RestfulSWIFT'
