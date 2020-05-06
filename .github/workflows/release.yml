@@ -35,23 +35,12 @@ jobs:
 
       # create the tag
       - name: Github Tag
-        uses: actions/checkout@master
+        uses: mathieudutour/github-tag-action@v4.1
         with:
-          fetch-depth: '0'
-      - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@1.17.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WITH_V: true
-
-      # create the tag
-      # - name: Github Tag
-      #   uses: mathieudutour/github-tag-action@v4.1
-      #   with:
-      #   github_token: ${{ secrets.GITHUB_TOKEN }}
-      #   default_bump: minor
-      #   dry_run: false
-      #   create_annotated_tag: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump: minor
+          dry_run: false
+          create_annotated_tag: true
 
       # Deploy to Cocoapod
       # - name: Deploy to Cocoapod Action
