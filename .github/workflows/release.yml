@@ -42,7 +42,6 @@ jobs:
           tag_prefix: ""
           create_annotated_tag: true
 
-
       # Deploy to Cocoapod
       - name: Deploy to Cocoapod Action
         run: |
