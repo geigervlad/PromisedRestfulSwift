@@ -42,5 +42,4 @@ public extension RestfulWrite {
             .then(execute)
             .map(toValidatedLocation)
     }
-    
 }
