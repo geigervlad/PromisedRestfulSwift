@@ -22,6 +22,9 @@
 		89119DFE24482A6E00276EE3 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89119DFD24482A6E00276EE3 /* Promise.swift */; };
 		8934CCBC245801BE0042D89E /* HTTPToolsValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8934CCBB245801BE0042D89E /* HTTPToolsValidation.swift */; };
 		893B0BAD246537CE00C4BB1B /* PromisedRestfulSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 893B0BAC246537CD00C4BB1B /* PromisedRestfulSwift.podspec */; };
+		893B0BB524653A4500C4BB1B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 893B0BB024653A4500C4BB1B /* README.md */; };
+		893B0BB624653A4500C4BB1B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 893B0BB224653A4500C4BB1B /* README.md */; };
+		893B0BB724653A4500C4BB1B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 893B0BB424653A4500C4BB1B /* README.md */; };
 		8959AD62244991A1000F05E8 /* InterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8959AD61244991A1000F05E8 /* InterceptorType.swift */; };
 		896E4CD92449C3F500506013 /* EmptyInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E4CD82449C3F500506013 /* EmptyInterceptor.swift */; };
 		896E4CDD2449C49B00506013 /* OAuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E4CDC2449C49B00506013 /* OAuthInterceptor.swift */; };
@@ -58,7 +61,6 @@
 
 /* Begin PBXFileReference section */
 		0516C7FDC641398F5643F6F1 /* Pods-RestfulSWIFT_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestfulSWIFT_Example.release.xcconfig"; path = "Target Support Files/Pods-RestfulSWIFT_Example/Pods-RestfulSWIFT_Example.release.xcconfig"; sourceTree = "<group>"; };
-		0ABB0650AD2C055E2EDDB09F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		4695D71368C5EA72CC0CB712 /* Pods-RestfulSWIFT_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestfulSWIFT_Tests.debug.xcconfig"; path = "Target Support Files/Pods-RestfulSWIFT_Tests/Pods-RestfulSWIFT_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4D4954161F4DEF26293FF0F5 /* Pods-PromisedRestfulSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromisedRestfulSwift_Example.release.xcconfig"; path = "Target Support Files/Pods-PromisedRestfulSwift_Example/Pods-PromisedRestfulSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
 		50BFAD5A37321AF7E6BDB7CE /* Pods-PromisedRestfulSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromisedRestfulSwift_Example.debug.xcconfig"; path = "Target Support Files/Pods-PromisedRestfulSwift_Example/Pods-PromisedRestfulSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +86,9 @@
 		89119DFF2448368C00276EE3 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		8934CCBB245801BE0042D89E /* HTTPToolsValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPToolsValidation.swift; sourceTree = "<group>"; };
 		893B0BAC246537CD00C4BB1B /* PromisedRestfulSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PromisedRestfulSwift.podspec; path = ../PromisedRestfulSwift.podspec; sourceTree = "<group>"; };
+		893B0BB024653A4500C4BB1B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		893B0BB224653A4500C4BB1B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		893B0BB424653A4500C4BB1B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8959AD61244991A1000F05E8 /* InterceptorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterceptorType.swift; sourceTree = "<group>"; };
 		896E4CD82449C3F500506013 /* EmptyInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyInterceptor.swift; sourceTree = "<group>"; };
 		896E4CDC2449C49B00506013 /* OAuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthInterceptor.swift; sourceTree = "<group>"; };
@@ -196,9 +201,11 @@
 		607FACF51AFB993E008FA782 /* PromisedRestfulSwift Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				893B0BB124653A4500C4BB1B /* Changelog */,
+				893B0BB324653A4500C4BB1B /* Documentation */,
+				893B0BB024653A4500C4BB1B /* README.md */,
 				893B0BAC246537CD00C4BB1B /* PromisedRestfulSwift.podspec */,
 				89BA4C0024504DE400FA4CEA /* .swiftlint.yml */,
-				0ABB0650AD2C055E2EDDB09F /* README.md */,
 				5F65740E1763D1090DAAAEFD /* LICENSE */,
 			);
 			name = "PromisedRestfulSwift Metadata";
@@ -224,6 +231,24 @@
 				89C89018244ED0E400126340 /* Upload */,
 			);
 			path = Restful;
+			sourceTree = "<group>";
+		};
+		893B0BB124653A4500C4BB1B /* Changelog */ = {
+			isa = PBXGroup;
+			children = (
+				893B0BB224653A4500C4BB1B /* README.md */,
+			);
+			name = Changelog;
+			path = ../Changelog;
+			sourceTree = "<group>";
+		};
+		893B0BB324653A4500C4BB1B /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				893B0BB424653A4500C4BB1B /* README.md */,
+			);
+			name = Documentation;
+			path = ../Documentation;
 			sourceTree = "<group>";
 		};
 		896E4CD62449C3D200506013 /* Definitions */ = {
@@ -517,8 +542,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				893B0BB624653A4500C4BB1B /* README.md in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				893B0BAD246537CE00C4BB1B /* PromisedRestfulSwift.podspec in Resources */,
+				893B0BB724653A4500C4BB1B /* README.md in Resources */,
+				893B0BB524653A4500C4BB1B /* README.md in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
