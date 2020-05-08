@@ -1,6 +1,6 @@
 //
 //  RestfulUpdateError.swift
-//  RestfulSWIFT
+//  PromisedRestfulSwift
 //
 //  Created by Vlad Geiger on 21.04.20.
 //  Copyright © 2020 Vlad Geiger. All rights reserved.

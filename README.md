@@ -1,4 +1,4 @@
-# RestfulSWIFT
+# PromisedRestfulSwift
 
 ![latest cocoapods version](https://img.shields.io/cocoapods/v/PromisedRestfulSwift "latest cocoapods version") ![license](https://img.shields.io/cocoapods/l/PromisedRestfulSwift "license") ![platforms](https://img.shields.io/cocoapods/p/PromisedRestfulSwift "platforms")
 
@@ -20,7 +20,7 @@ The library is based on Promises, Swift Codable and Protocol Oriented Developmen
 use_frameworks!
 
 target "Change Me!" do
-  pod "PromisedRestfulSwift", "~> x.X.X"
+pod "PromisedRestfulSwift", "~> 1.0.0"
 end
 ```
 
@@ -28,10 +28,10 @@ end
 TODO
 
 ## Documentation
-Please check [here](https://github.com/geigervlad/RestfulSWIFT/blob/master/Documentation/README.md)
+Please check [here](https://github.com/geigervlad/PromisedRestfulSwift/blob/master/Documentation/README.md)
 
 ## Change Log
-Please check [here](https://github.com/geigervlad/RestfulSWIFT/blob/master/Changelog/README.md)
+Please check [here](https://github.com/geigervlad/PromisedRestfulSwift/blob/master/Changelog/README.md)
 
 ## Contribution
 -   [Vlad Geiger](https://www.linkedin.com/in/geiger-vlad-21950663)
@@ -39,4 +39,4 @@ Please check [here](https://github.com/geigervlad/RestfulSWIFT/blob/master/Chang
 
 
 ## Licence
-MIT - for more information check [LICENSE](https://github.com/geigervlad/RestfulSWIFT/blob/master/LICENSE)
+MIT - for more information check [LICENSE](https://github.com/geigervlad/PromisedRestfulSwift/blob/master/LICENSE)

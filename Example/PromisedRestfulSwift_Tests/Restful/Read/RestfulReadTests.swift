@@ -68,10 +68,7 @@ class RestfulReadTests: XCTestCase, RestfulRead {
     }
     
     func testReadFailureInvalidHttpCode() {
-        let httpUrlResponse = HTTPURLResponse(url: exampleUri,
-                                              statusCode: 400,
-                                              httpVersion: nil,
-                                              headerFields: nil)
+        let httpUrlResponse = HTTPURLResponse(url: exampleUri, statusCode: 400, httpVersion: nil, headerFields: nil)
         response = (nil, httpUrlResponse, nil)
         let promise: Promise<[String]> = read(exampleUri)
         let expectation = XCTestExpectation()
@@ -89,10 +86,7 @@ class RestfulReadTests: XCTestCase, RestfulRead {
     }
     
     func testReadFailureFailedToExtractData() {
-        let httpUrlResponse = HTTPURLResponse(url: exampleUri,
-                                              statusCode: 200,
-                                              httpVersion: nil,
-                                              headerFields: nil)
+        let httpUrlResponse = HTTPURLResponse(url: exampleUri, statusCode: 200, httpVersion: nil, headerFields: nil)
         response = (nil, httpUrlResponse, nil)
         let promise: Promise<[String]> = read(exampleUri)
         let expectation = XCTestExpectation()
@@ -110,10 +104,7 @@ class RestfulReadTests: XCTestCase, RestfulRead {
     }
     
     func testReadFailureDecodingErrorDataCorrupted() {
-        let httpUrlResponse = HTTPURLResponse(url: exampleUri,
-                                              statusCode: 200,
-                                              httpVersion: nil,
-                                              headerFields: nil)
+        let httpUrlResponse = HTTPURLResponse(url: exampleUri, statusCode: 200, httpVersion: nil, headerFields: nil)
         response = (Data(), httpUrlResponse, nil)
         let promise: Promise<[String]> = read(exampleUri)
         let expectation = XCTestExpectation()
@@ -131,24 +122,24 @@ class RestfulReadTests: XCTestCase, RestfulRead {
     }
     
     func testReadSuccess() {
-        let httpUrlResponse = HTTPURLResponse(url: exampleUri,
-                                              statusCode: 200,
-                                              httpVersion: nil,
-                                              headerFields: nil)
-        let structure = TestStructureCodable(string: "I am a test data", int: 1512, bool: true )
-        let data = try! JSONEncoder().encode(structure)
-        response = (data, httpUrlResponse, nil)
-        let promise: Promise<TestStructureCodable> = read(exampleUri)
-        let expectation = XCTestExpectation()
-        promise.done { result in
-            XCTAssertEqual(result.string, structure.string)
-            XCTAssertEqual(result.int, structure.int)
-            XCTAssertEqual(result.bool, structure.bool)
-            expectation.fulfill()
-        }.catch { error in
-            XCTFail("ERROR: Unexpected error: \(error) occured")
+        do {
+            let httpUrlResponse = HTTPURLResponse(url: exampleUri, statusCode: 200, httpVersion: nil, headerFields: nil)
+            let structure = TestStructureCodable(string: "I am a test data", int: 1512, bool: true )
+            let data = try JSONEncoder().encode(structure)
+            response = (data, httpUrlResponse, nil)
+            let promise: Promise<TestStructureCodable> = read(exampleUri)
+            let expectation = XCTestExpectation()
+            promise.done { result in
+                XCTAssertEqual(result.string, structure.string)
+                XCTAssertEqual(result.int, structure.int)
+                XCTAssertEqual(result.bool, structure.bool)
+                expectation.fulfill()
+            }.catch { error in
+                XCTFail("ERROR: Unexpected error: \(error) occured")
+            }
+            wait(for: [expectation], timeout: 2)
+        } catch {
+            XCTFail("Failed to encode data")
         }
-        wait(for: [expectation], timeout: 2)
     }
-    
 }

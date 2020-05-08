@@ -1,6 +1,6 @@
 //
 //  EmptyInterceptor.swift
-//  RestfulSWIFT
+//  PromisedRestfulSwift
 //
 //  Created by Vlad Geiger on 17.04.20.
 //  Copyright © 2020 Vlad Geiger. All rights reserved.
