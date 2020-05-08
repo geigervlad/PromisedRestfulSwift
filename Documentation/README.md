@@ -1,4 +1,4 @@
-# Documentation for RestfulSWIFT
+# Documentation for PromisedRestfulSwift
 
 ## Table of Contents
 1.  [Description](#description)

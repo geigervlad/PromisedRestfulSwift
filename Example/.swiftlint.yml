@@ -1,5 +1,6 @@
 included:
-- ../RestfulSWIFT Sources
+- ../PromisedRestfulSwift Sources
+- ./PromisedRestfulSwift_Tests
 
 excluded: # paths to ignore during linting. Takes precedence over `included`.
 - Carthage
@@ -14,7 +15,7 @@ file_length: 550
 function_body_length: 80
 function_parameter_count: 8
 line_length: 200
-type_body_length: 300
+type_body_length: 400
 identifier_name:
 
 disabled_rules:
