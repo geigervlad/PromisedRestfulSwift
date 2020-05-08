@@ -27,8 +27,8 @@ jobs:
       - name: Validate Library
         uses: ty0x2333/cocoapods-action@master
         with:
-          workspace: Example/RestfulSWIFT.xcworkspace
-          scheme: RestfulSWIFT-Example
+          workspace: Example/PromisedRestfulSwift.xcworkspace
+          scheme: PromisedRestfulSwift-Example
           additional_build_params: -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0'
 
       # create the tag
