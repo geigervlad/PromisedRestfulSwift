@@ -2,7 +2,7 @@ use_frameworks!
 
 platform :ios, '11.4'
 
-target 'RestfulSWIFT_Example' do
+target 'PromisedRestfulSwift_Example' do
   
   pod 'PromisedRestfulSwift', :path => '../'
   
@@ -10,7 +10,7 @@ target 'RestfulSWIFT_Example' do
   
   pod 'SwiftLint', '0.39.2'
 
-  target 'RestfulSWIFT_Tests' do
+  target 'PromisedRestfulSwift_Tests' do
     inherit! :search_paths
 
     

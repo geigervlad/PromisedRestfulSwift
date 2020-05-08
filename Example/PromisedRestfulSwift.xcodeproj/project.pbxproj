@@ -1,0 +1,927 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
+		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
+		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
+		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		89119DEE24474A2100276EE3 /* HTTPTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89119DED24474A2100276EE3 /* HTTPTools.swift */; };
+		89119DF124474C8A00276EE3 /* RestfulRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89119DF024474C8A00276EE3 /* RestfulRead.swift */; };
+		89119DF324474C9200276EE3 /* RestfulWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89119DF224474C9200276EE3 /* RestfulWrite.swift */; };
+		89119DF524474C9C00276EE3 /* RestfulUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89119DF424474C9C00276EE3 /* RestfulUpdate.swift */; };
+		89119DF724474CA500276EE3 /* RestfulDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89119DF624474CA500276EE3 /* RestfulDelete.swift */; };
+		89119DF924474CB900276EE3 /* RestfulUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89119DF824474CB900276EE3 /* RestfulUpload.swift */; };
+		89119DFC2448296300276EE3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89119DFB2448296300276EE3 /* Constants.swift */; };
+		89119DFE24482A6E00276EE3 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89119DFD24482A6E00276EE3 /* Promise.swift */; };
+		8934CCBC245801BE0042D89E /* HTTPToolsValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8934CCBB245801BE0042D89E /* HTTPToolsValidation.swift */; };
+		8959AD62244991A1000F05E8 /* InterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8959AD61244991A1000F05E8 /* InterceptorType.swift */; };
+		896E4CD92449C3F500506013 /* EmptyInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E4CD82449C3F500506013 /* EmptyInterceptor.swift */; };
+		896E4CDD2449C49B00506013 /* OAuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E4CDC2449C49B00506013 /* OAuthInterceptor.swift */; };
+		89BA4C1A2450568700FA4CEA /* PromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C192450568700FA4CEA /* PromiseTests.swift */; };
+		89BA4C2024505F5600FA4CEA /* EncodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C1F24505F5600FA4CEA /* EncodableTests.swift */; };
+		89BA4C22245064E300FA4CEA /* RestfulReadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C21245064E300FA4CEA /* RestfulReadTests.swift */; };
+		89BA4C24245064F200FA4CEA /* RestfulWriteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C23245064F200FA4CEA /* RestfulWriteTests.swift */; };
+		89BA4C26245064FD00FA4CEA /* RestfulWriteErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C25245064FC00FA4CEA /* RestfulWriteErrorTests.swift */; };
+		89BA4C282450650A00FA4CEA /* RestfulUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C272450650A00FA4CEA /* RestfulUpdateTests.swift */; };
+		89BA4C2A2450651D00FA4CEA /* RestfulUpdateErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C292450651D00FA4CEA /* RestfulUpdateErrorTests.swift */; };
+		89BA4C2C2450653100FA4CEA /* RestfulDeleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C2B2450653100FA4CEA /* RestfulDeleteTests.swift */; };
+		89BA4C2E2450654400FA4CEA /* RestfulUploadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C2D2450654400FA4CEA /* RestfulUploadTests.swift */; };
+		89BA4C302450655900FA4CEA /* HTTPToolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C2F2450655900FA4CEA /* HTTPToolsTests.swift */; };
+		89BA4C3524506AE100FA4CEA /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA4C3424506AE100FA4CEA /* ValidationError.swift */; };
+		89C89011244ECEDF00126340 /* RestfulWriteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C89010244ECEDF00126340 /* RestfulWriteError.swift */; };
+		89C89013244ECEFE00126340 /* RestfulUpdateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C89012244ECEFE00126340 /* RestfulUpdateError.swift */; };
+		89EDD347245994BB00172F4F /* Intercepting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EDD346245994BB00172F4F /* Intercepting.swift */; };
+		89F306DB2447229900B88E83 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F306DA2447229900B88E83 /* Encodable.swift */; };
+		89F306DE244722EE00B88E83 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F306DD244722EE00B88E83 /* Errors.swift */; };
+		B1FB3D5D77FF24D38EA479AD /* Pods_PromisedRestfulSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841190C4A1A10FE315D89770 /* Pods_PromisedRestfulSwift_Tests.framework */; };
+		D510CC2024615C35009FFAF3 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D510CC1F24615C35009FFAF3 /* MockData.swift */; };
+		EA99E192EB3CC0F21C330DE9 /* Pods_PromisedRestfulSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 646995A878FEA9CD61CADB12 /* Pods_PromisedRestfulSwift_Example.framework */; };
+		F43C84322B0DDE691B4CB56C /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89BA4C0B245055B300FA4CEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = RestfulSWIFT_Example;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0516C7FDC641398F5643F6F1 /* Pods-RestfulSWIFT_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestfulSWIFT_Example.release.xcconfig"; path = "Target Support Files/Pods-RestfulSWIFT_Example/Pods-RestfulSWIFT_Example.release.xcconfig"; sourceTree = "<group>"; };
+		0ABB0650AD2C055E2EDDB09F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		3A0C213B5634F47BDB8DAE7A /* RestfulSWIFT.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RestfulSWIFT.podspec; path = ../RestfulSWIFT.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4695D71368C5EA72CC0CB712 /* Pods-RestfulSWIFT_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestfulSWIFT_Tests.debug.xcconfig"; path = "Target Support Files/Pods-RestfulSWIFT_Tests/Pods-RestfulSWIFT_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		4D4954161F4DEF26293FF0F5 /* Pods-PromisedRestfulSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromisedRestfulSwift_Example.release.xcconfig"; path = "Target Support Files/Pods-PromisedRestfulSwift_Example/Pods-PromisedRestfulSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
+		50BFAD5A37321AF7E6BDB7CE /* Pods-PromisedRestfulSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromisedRestfulSwift_Example.debug.xcconfig"; path = "Target Support Files/Pods-PromisedRestfulSwift_Example/Pods-PromisedRestfulSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		5F65740E1763D1090DAAAEFD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		607FACD01AFB9204008FA782 /* PromisedRestfulSwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PromisedRestfulSwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		646995A878FEA9CD61CADB12 /* Pods_PromisedRestfulSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PromisedRestfulSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7918A75E80160CE13EFE2B80 /* Pods-PromisedRestfulSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromisedRestfulSwift_Tests.release.xcconfig"; path = "Target Support Files/Pods-PromisedRestfulSwift_Tests/Pods-PromisedRestfulSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		841190C4A1A10FE315D89770 /* Pods_PromisedRestfulSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PromisedRestfulSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89119DED24474A2100276EE3 /* HTTPTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTools.swift; sourceTree = "<group>"; };
+		89119DF024474C8A00276EE3 /* RestfulRead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulRead.swift; sourceTree = "<group>"; };
+		89119DF224474C9200276EE3 /* RestfulWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulWrite.swift; sourceTree = "<group>"; };
+		89119DF424474C9C00276EE3 /* RestfulUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulUpdate.swift; sourceTree = "<group>"; };
+		89119DF624474CA500276EE3 /* RestfulDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulDelete.swift; sourceTree = "<group>"; };
+		89119DF824474CB900276EE3 /* RestfulUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulUpload.swift; sourceTree = "<group>"; };
+		89119DFB2448296300276EE3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		89119DFD24482A6E00276EE3 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
+		89119DFF2448368C00276EE3 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
+		8934CCBB245801BE0042D89E /* HTTPToolsValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPToolsValidation.swift; sourceTree = "<group>"; };
+		8959AD61244991A1000F05E8 /* InterceptorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterceptorType.swift; sourceTree = "<group>"; };
+		896E4CD82449C3F500506013 /* EmptyInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyInterceptor.swift; sourceTree = "<group>"; };
+		896E4CDC2449C49B00506013 /* OAuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthInterceptor.swift; sourceTree = "<group>"; };
+		89BA4C0024504DE400FA4CEA /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		89BA4C06245055B300FA4CEA /* PromisedRestfulSwift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PromisedRestfulSwift_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89BA4C0A245055B300FA4CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89BA4C192450568700FA4CEA /* PromiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseTests.swift; sourceTree = "<group>"; };
+		89BA4C1D2450581800FA4CEA /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89BA4C1F24505F5600FA4CEA /* EncodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableTests.swift; sourceTree = "<group>"; };
+		89BA4C21245064E300FA4CEA /* RestfulReadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulReadTests.swift; sourceTree = "<group>"; };
+		89BA4C23245064F200FA4CEA /* RestfulWriteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulWriteTests.swift; sourceTree = "<group>"; };
+		89BA4C25245064FC00FA4CEA /* RestfulWriteErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulWriteErrorTests.swift; sourceTree = "<group>"; };
+		89BA4C272450650A00FA4CEA /* RestfulUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulUpdateTests.swift; sourceTree = "<group>"; };
+		89BA4C292450651D00FA4CEA /* RestfulUpdateErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulUpdateErrorTests.swift; sourceTree = "<group>"; };
+		89BA4C2B2450653100FA4CEA /* RestfulDeleteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulDeleteTests.swift; sourceTree = "<group>"; };
+		89BA4C2D2450654400FA4CEA /* RestfulUploadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulUploadTests.swift; sourceTree = "<group>"; };
+		89BA4C2F2450655900FA4CEA /* HTTPToolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPToolsTests.swift; sourceTree = "<group>"; };
+		89BA4C3424506AE100FA4CEA /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		89C89010244ECEDF00126340 /* RestfulWriteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulWriteError.swift; sourceTree = "<group>"; };
+		89C89012244ECEFE00126340 /* RestfulUpdateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulUpdateError.swift; sourceTree = "<group>"; };
+		89EDD346245994BB00172F4F /* Intercepting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intercepting.swift; sourceTree = "<group>"; };
+		89F306DA2447229900B88E83 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		89F306DD244722EE00B88E83 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		A5C853BF4E147ECDCF632B43 /* Pods-RestfulSWIFT_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestfulSWIFT_Tests.release.xcconfig"; path = "Target Support Files/Pods-RestfulSWIFT_Tests/Pods-RestfulSWIFT_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C099F16F1F2E15B612649578 /* Pods-RestfulSWIFT_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestfulSWIFT_Example.debug.xcconfig"; path = "Target Support Files/Pods-RestfulSWIFT_Example/Pods-RestfulSWIFT_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D510CC1F24615C35009FFAF3 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		EE47646C529385605A061266 /* Pods-PromisedRestfulSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromisedRestfulSwift_Tests.debug.xcconfig"; path = "Target Support Files/Pods-PromisedRestfulSwift_Tests/Pods-PromisedRestfulSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		607FACCD1AFB9204008FA782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA99E192EB3CC0F21C330DE9 /* Pods_PromisedRestfulSwift_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89BA4C03245055B300FA4CEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1FB3D5D77FF24D38EA479AD /* Pods_PromisedRestfulSwift_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		44C717D1B610B0B48ABCDFE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C099F16F1F2E15B612649578 /* Pods-RestfulSWIFT_Example.debug.xcconfig */,
+				0516C7FDC641398F5643F6F1 /* Pods-RestfulSWIFT_Example.release.xcconfig */,
+				4695D71368C5EA72CC0CB712 /* Pods-RestfulSWIFT_Tests.debug.xcconfig */,
+				A5C853BF4E147ECDCF632B43 /* Pods-RestfulSWIFT_Tests.release.xcconfig */,
+				50BFAD5A37321AF7E6BDB7CE /* Pods-PromisedRestfulSwift_Example.debug.xcconfig */,
+				4D4954161F4DEF26293FF0F5 /* Pods-PromisedRestfulSwift_Example.release.xcconfig */,
+				EE47646C529385605A061266 /* Pods-PromisedRestfulSwift_Tests.debug.xcconfig */,
+				7918A75E80160CE13EFE2B80 /* Pods-PromisedRestfulSwift_Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		607FACC71AFB9204008FA782 = {
+			isa = PBXGroup;
+			children = (
+				89F306CF24471C4200B88E83 /* PromisedRestfulSwift Sources */,
+				607FACF51AFB993E008FA782 /* PromisedRestfulSwift Metadata */,
+				607FACD21AFB9204008FA782 /* PromisedRestfulSwift Example */,
+				89BA4C07245055B300FA4CEA /* PromisedRestfulSwift_Tests */,
+				607FACD11AFB9204008FA782 /* Products */,
+				44C717D1B610B0B48ABCDFE7 /* Pods */,
+				677D5E6EB84761CB954A72EF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		607FACD11AFB9204008FA782 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD01AFB9204008FA782 /* PromisedRestfulSwift_Example.app */,
+				89BA4C06245055B300FA4CEA /* PromisedRestfulSwift_Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		607FACD21AFB9204008FA782 /* PromisedRestfulSwift Example */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				607FACD31AFB9204008FA782 /* Supporting Files */,
+			);
+			name = "PromisedRestfulSwift Example";
+			path = RestfulSWIFT;
+			sourceTree = "<group>";
+		};
+		607FACD31AFB9204008FA782 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89119DFF2448368C00276EE3 /* .swiftlint.yml */,
+				607FACD41AFB9204008FA782 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		607FACF51AFB993E008FA782 /* PromisedRestfulSwift Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				89BA4C0024504DE400FA4CEA /* .swiftlint.yml */,
+				3A0C213B5634F47BDB8DAE7A /* RestfulSWIFT.podspec */,
+				0ABB0650AD2C055E2EDDB09F /* README.md */,
+				5F65740E1763D1090DAAAEFD /* LICENSE */,
+			);
+			name = "PromisedRestfulSwift Metadata";
+			sourceTree = "<group>";
+		};
+		677D5E6EB84761CB954A72EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89BA4C1D2450581800FA4CEA /* PromiseKit.framework */,
+				646995A878FEA9CD61CADB12 /* Pods_PromisedRestfulSwift_Example.framework */,
+				841190C4A1A10FE315D89770 /* Pods_PromisedRestfulSwift_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		89119DEF24474BC700276EE3 /* Restful */ = {
+			isa = PBXGroup;
+			children = (
+				89C89014244ED0BB00126340 /* Read */,
+				89C89015244ED0CA00126340 /* Write */,
+				89C89016244ED0D500126340 /* Update */,
+				89C89017244ED0DC00126340 /* Delete */,
+				89C89018244ED0E400126340 /* Upload */,
+			);
+			path = Restful;
+			sourceTree = "<group>";
+		};
+		896E4CD62449C3D200506013 /* Definitions */ = {
+			isa = PBXGroup;
+			children = (
+				89119DFB2448296300276EE3 /* Constants.swift */,
+				89F306DD244722EE00B88E83 /* Errors.swift */,
+				8959AD61244991A1000F05E8 /* InterceptorType.swift */,
+				89EDD346245994BB00172F4F /* Intercepting.swift */,
+			);
+			path = Definitions;
+			sourceTree = "<group>";
+		};
+		896E4CD72449C3E200506013 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				896E4CD82449C3F500506013 /* EmptyInterceptor.swift */,
+				896E4CDC2449C49B00506013 /* OAuthInterceptor.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		896E4CDB2449C45D00506013 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				89119DED24474A2100276EE3 /* HTTPTools.swift */,
+				8934CCBB245801BE0042D89E /* HTTPToolsValidation.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		89BA4C07245055B300FA4CEA /* PromisedRestfulSwift_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				89BA4C132450563900FA4CEA /* Implementations */,
+				89BA4C122450563400FA4CEA /* Tools */,
+				89BA4C112450562D00FA4CEA /* Restful */,
+				89BA4C102450562000FA4CEA /* Extensions */,
+				89BA4C3324506AAA00FA4CEA /* Helpers */,
+				D510CC1F24615C35009FFAF3 /* MockData.swift */,
+			);
+			path = PromisedRestfulSwift_Tests;
+			sourceTree = "<group>";
+		};
+		89BA4C102450562000FA4CEA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				89BA4C192450568700FA4CEA /* PromiseTests.swift */,
+				89BA4C1F24505F5600FA4CEA /* EncodableTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		89BA4C112450562D00FA4CEA /* Restful */ = {
+			isa = PBXGroup;
+			children = (
+				89BA4C182450565900FA4CEA /* Read */,
+				89BA4C172450565500FA4CEA /* Write */,
+				89BA4C162450565000FA4CEA /* Update */,
+				89BA4C152450564C00FA4CEA /* Delete */,
+				89BA4C142450564300FA4CEA /* Upload */,
+			);
+			path = Restful;
+			sourceTree = "<group>";
+		};
+		89BA4C122450563400FA4CEA /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				89BA4C2F2450655900FA4CEA /* HTTPToolsTests.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		89BA4C132450563900FA4CEA /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		89BA4C142450564300FA4CEA /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				89BA4C2D2450654400FA4CEA /* RestfulUploadTests.swift */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
+		89BA4C152450564C00FA4CEA /* Delete */ = {
+			isa = PBXGroup;
+			children = (
+				89BA4C2B2450653100FA4CEA /* RestfulDeleteTests.swift */,
+			);
+			path = Delete;
+			sourceTree = "<group>";
+		};
+		89BA4C162450565000FA4CEA /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				89BA4C272450650A00FA4CEA /* RestfulUpdateTests.swift */,
+				89BA4C292450651D00FA4CEA /* RestfulUpdateErrorTests.swift */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
+		89BA4C172450565500FA4CEA /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				89BA4C23245064F200FA4CEA /* RestfulWriteTests.swift */,
+				89BA4C25245064FC00FA4CEA /* RestfulWriteErrorTests.swift */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		89BA4C182450565900FA4CEA /* Read */ = {
+			isa = PBXGroup;
+			children = (
+				89BA4C21245064E300FA4CEA /* RestfulReadTests.swift */,
+			);
+			path = Read;
+			sourceTree = "<group>";
+		};
+		89BA4C3324506AAA00FA4CEA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				89BA4C3424506AE100FA4CEA /* ValidationError.swift */,
+				89BA4C0A245055B300FA4CEA /* Info.plist */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		89C89014244ED0BB00126340 /* Read */ = {
+			isa = PBXGroup;
+			children = (
+				89119DF024474C8A00276EE3 /* RestfulRead.swift */,
+			);
+			path = Read;
+			sourceTree = "<group>";
+		};
+		89C89015244ED0CA00126340 /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				89119DF224474C9200276EE3 /* RestfulWrite.swift */,
+				89C89010244ECEDF00126340 /* RestfulWriteError.swift */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		89C89016244ED0D500126340 /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				89119DF424474C9C00276EE3 /* RestfulUpdate.swift */,
+				89C89012244ECEFE00126340 /* RestfulUpdateError.swift */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
+		89C89017244ED0DC00126340 /* Delete */ = {
+			isa = PBXGroup;
+			children = (
+				89119DF624474CA500276EE3 /* RestfulDelete.swift */,
+			);
+			path = Delete;
+			sourceTree = "<group>";
+		};
+		89C89018244ED0E400126340 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				89119DF824474CB900276EE3 /* RestfulUpload.swift */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
+		89F306CF24471C4200B88E83 /* PromisedRestfulSwift Sources */ = {
+			isa = PBXGroup;
+			children = (
+				89F306D824471C6900B88E83 /* Sources */,
+			);
+			name = "PromisedRestfulSwift Sources";
+			path = "../PromisedRestfulSwift Sources";
+			sourceTree = "<group>";
+		};
+		89F306D824471C6900B88E83 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				896E4CD62449C3D200506013 /* Definitions */,
+				896E4CD72449C3E200506013 /* Implementations */,
+				896E4CDB2449C45D00506013 /* Tools */,
+				89119DEF24474BC700276EE3 /* Restful */,
+				89F306D92447226100B88E83 /* Extensions */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		89F306D92447226100B88E83 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				89F306DA2447229900B88E83 /* Encodable.swift */,
+				89119DFD24482A6E00276EE3 /* Promise.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		607FACCF1AFB9204008FA782 /* PromisedRestfulSwift_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "PromisedRestfulSwift_Example" */;
+			buildPhases = (
+				4470D2029C9D1CD3690CA794 /* [CP] Check Pods Manifest.lock */,
+				607FACCC1AFB9204008FA782 /* Sources */,
+				607FACCD1AFB9204008FA782 /* Frameworks */,
+				607FACCE1AFB9204008FA782 /* Resources */,
+				699BF7C3B62EEF22C2070964 /* [CP] Embed Pods Frameworks */,
+				89119E01244836CB00276EE3 /* Run Swiftlint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PromisedRestfulSwift_Example;
+			productName = RestfulSWIFT;
+			productReference = 607FACD01AFB9204008FA782 /* PromisedRestfulSwift_Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		89BA4C05245055B300FA4CEA /* PromisedRestfulSwift_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89BA4C0D245055B300FA4CEA /* Build configuration list for PBXNativeTarget "PromisedRestfulSwift_Tests" */;
+			buildPhases = (
+				5CCDE98CDBA70C5D7A02EFC5 /* [CP] Check Pods Manifest.lock */,
+				89BA4C02245055B300FA4CEA /* Sources */,
+				89BA4C03245055B300FA4CEA /* Frameworks */,
+				89BA4C04245055B300FA4CEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89BA4C0C245055B300FA4CEA /* PBXTargetDependency */,
+			);
+			name = PromisedRestfulSwift_Tests;
+			productName = RestfulSWIFT_Tests;
+			productReference = 89BA4C06245055B300FA4CEA /* PromisedRestfulSwift_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		607FACC81AFB9204008FA782 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = CocoaPods;
+				TargetAttributes = {
+					607FACCF1AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 3QP9VNT7W6;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					89BA4C05245055B300FA4CEA = {
+						CreatedOnToolsVersion = 11.4.1;
+						DevelopmentTeam = TQG3K9WNMD;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+				};
+			};
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "PromisedRestfulSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 607FACC71AFB9204008FA782;
+			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				607FACCF1AFB9204008FA782 /* PromisedRestfulSwift_Example */,
+				89BA4C05245055B300FA4CEA /* PromisedRestfulSwift_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		607FACCE1AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89BA4C04245055B300FA4CEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4470D2029C9D1CD3690CA794 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PromisedRestfulSwift_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CCDE98CDBA70C5D7A02EFC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PromisedRestfulSwift_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		699BF7C3B62EEF22C2070964 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PromisedRestfulSwift_Example/Pods-PromisedRestfulSwift_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PromisedRestfulSwift_Example/Pods-PromisedRestfulSwift_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89119E01244836CB00276EE3 /* Run Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		607FACCC1AFB9204008FA782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89EDD347245994BB00172F4F /* Intercepting.swift in Sources */,
+				89119DF924474CB900276EE3 /* RestfulUpload.swift in Sources */,
+				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				89F306DE244722EE00B88E83 /* Errors.swift in Sources */,
+				89119DF724474CA500276EE3 /* RestfulDelete.swift in Sources */,
+				89119DEE24474A2100276EE3 /* HTTPTools.swift in Sources */,
+				89119DF124474C8A00276EE3 /* RestfulRead.swift in Sources */,
+				89F306DB2447229900B88E83 /* Encodable.swift in Sources */,
+				89119DF324474C9200276EE3 /* RestfulWrite.swift in Sources */,
+				896E4CD92449C3F500506013 /* EmptyInterceptor.swift in Sources */,
+				89119DF524474C9C00276EE3 /* RestfulUpdate.swift in Sources */,
+				896E4CDD2449C49B00506013 /* OAuthInterceptor.swift in Sources */,
+				89119DFC2448296300276EE3 /* Constants.swift in Sources */,
+				89C89011244ECEDF00126340 /* RestfulWriteError.swift in Sources */,
+				8959AD62244991A1000F05E8 /* InterceptorType.swift in Sources */,
+				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				89C89013244ECEFE00126340 /* RestfulUpdateError.swift in Sources */,
+				8934CCBC245801BE0042D89E /* HTTPToolsValidation.swift in Sources */,
+				89119DFE24482A6E00276EE3 /* Promise.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89BA4C02245055B300FA4CEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89BA4C2E2450654400FA4CEA /* RestfulUploadTests.swift in Sources */,
+				D510CC2024615C35009FFAF3 /* MockData.swift in Sources */,
+				89BA4C282450650A00FA4CEA /* RestfulUpdateTests.swift in Sources */,
+				89BA4C26245064FD00FA4CEA /* RestfulWriteErrorTests.swift in Sources */,
+				89BA4C1A2450568700FA4CEA /* PromiseTests.swift in Sources */,
+				89BA4C24245064F200FA4CEA /* RestfulWriteTests.swift in Sources */,
+				89BA4C2A2450651D00FA4CEA /* RestfulUpdateErrorTests.swift in Sources */,
+				89BA4C2024505F5600FA4CEA /* EncodableTests.swift in Sources */,
+				89BA4C3524506AE100FA4CEA /* ValidationError.swift in Sources */,
+				89BA4C2C2450653100FA4CEA /* RestfulDeleteTests.swift in Sources */,
+				89BA4C22245064E300FA4CEA /* RestfulReadTests.swift in Sources */,
+				89BA4C302450655900FA4CEA /* HTTPToolsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89BA4C0C245055B300FA4CEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* PromisedRestfulSwift_Example */;
+			targetProxy = 89BA4C0B245055B300FA4CEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				607FACDA1AFB9204008FA782 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				607FACDF1AFB9204008FA782 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		607FACED1AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		607FACEE1AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		607FACF01AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50BFAD5A37321AF7E6BDB7CE /* Pods-PromisedRestfulSwift_Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3QP9VNT7W6;
+				INFOPLIST_FILE = PromisedRestfulSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = geiger.vlad.PromisedRestfulSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		607FACF11AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D4954161F4DEF26293FF0F5 /* Pods-PromisedRestfulSwift_Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3QP9VNT7W6;
+				INFOPLIST_FILE = PromisedRestfulSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = geiger.vlad.PromisedRestfulSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		89BA4C0E245055B300FA4CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE47646C529385605A061266 /* Pods-PromisedRestfulSwift_Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TQG3K9WNMD;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = PromisedRestfulSwift_Tests/Helpers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "vlad.geiger.PromisedRestfulSwift-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PromisedRestfulSwift_Example.app/PromisedRestfulSwift_Example";
+			};
+			name = Debug;
+		};
+		89BA4C0F245055B300FA4CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7918A75E80160CE13EFE2B80 /* Pods-PromisedRestfulSwift_Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TQG3K9WNMD;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = PromisedRestfulSwift_Tests/Helpers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "vlad.geiger.PromisedRestfulSwift-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PromisedRestfulSwift_Example.app/PromisedRestfulSwift_Example";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "PromisedRestfulSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACED1AFB9204008FA782 /* Debug */,
+				607FACEE1AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "PromisedRestfulSwift_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACF01AFB9204008FA782 /* Debug */,
+				607FACF11AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89BA4C0D245055B300FA4CEA /* Build configuration list for PBXNativeTarget "PromisedRestfulSwift_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89BA4C0E245055B300FA4CEA /* Debug */,
+				89BA4C0F245055B300FA4CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
+}
