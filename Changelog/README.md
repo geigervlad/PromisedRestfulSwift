@@ -1,5 +1,15 @@
 # Change Log of PromisedRestfulSwift
 
+## Release 1.1.0
+
+#### New Features
+
+-   Renamed Project to match Pod Name
+
+#### Fixes
+
+-   Integrated Swiftlint within tests
+
 ## Release 1.0.0
 
 #### New Features
