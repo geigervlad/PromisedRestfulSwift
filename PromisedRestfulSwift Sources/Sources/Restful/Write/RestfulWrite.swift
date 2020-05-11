@@ -23,6 +23,17 @@ public extension RestfulWrite {
             .map(toValidatedEntity)
     }
     
+    /// Executes a POST request on a resource with no body: url encoding
+    /// - Parameter url: the url with the query parameters
+    /// - Returns: A promise which resolves if the request was successful and contains the value of the HTTP Location Header
+    func writeAndExtractLocation(_ url: URL) -> Promise<String> {
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethods.post.rawValue
+        return interceptor.intercept(request)
+            .then(execute)
+            .map(toValidatedLocation)
+    }
+    
     /// Executes a POST request on a resource: /solutions with the entity data and returns the server response
     /// - Parameter url: the url for the resource to create
     /// - Returns: A promise which resolves if the request was successful and contains the server response
