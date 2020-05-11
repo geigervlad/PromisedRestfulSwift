@@ -27,7 +27,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  PromisedRestfulSwift: 207d75af99de5e7cb1affb9234fd6f014860f30a
+  PromisedRestfulSwift: cdb88aa20ec0d9e50fc70d528fbf3628f1c2e900
   PromiseKit: c8668a559f26c98277a543192c51bc38dd2dfc76
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
