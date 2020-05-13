@@ -234,9 +234,9 @@ This protocol is not implemented yet.
 
 ### Interceptor Protocol - for injecting custom needs within all or some requests <a name="interceptor"></a>
 The interceptor provides the capability to inject custom functionality before executing the HTTP request.
-The default interceptor is defined as [```EmptyInterceptor```](../PromisedRestfulSwift Sources/Sources/Implementations/EmptyInterceptor.swift) and can be replaced by overwriting the value of the static attribute [```defaultInterceptor```](../PromisedRestfulSwift Sources/Sources/Definitions/Intercepting.swift).
+The default interceptor is defined as [```EmptyInterceptor```](../PromisedRestfulSwift%20Sources/Sources/Implementations/EmptyInterceptor.swift) and can be replaced by overwriting the value of the static attribute [```defaultInterceptor```](../PromisedRestfulSwift%20Sources/Sources/Definitions/Intercepting.swift).
 
-Example: Please check [```OAuthInterceptor```](../PromisedRestfulSwift Sources/Sources/Implementations/OAuthInterceptor.swift) which intercepts all request and injects an authorization header before executing the request.
+Example: Please check [```OAuthInterceptor```](../PromisedRestfulSwift%20Sources/Sources/Implementations/OAuthInterceptor.swift) which intercepts all request and injects an authorization header before executing the request.
 
 ### OAuthInterceptor - Implementation for injecting access_token within requests <a name="oauthinterceptor"></a>
 This interceptor provides a basic injection of bearer access token while refreshing it through the refresh token for OAuth2 protocol.
