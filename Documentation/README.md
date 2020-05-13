@@ -48,12 +48,37 @@ class MyCustomService: RestfulRead {
     public func getAll(by id: String) -> Promise<[EntityType]> {
         return read(domain)
     }
-
 }
 ```
 
 ### RestfulWrite Protocol - for executing POST requests <a name="restfulwrite"></a>
-TODO
+This protocol provides possibiliry to execute POST requests on an URL and returns a promise with a decodable result or a location header.
+
+Services:
+
+```swift
+func write(_ url: URL) -> Promise<Decodable>
+```
+
+Example:
+
+```swift
+struct EntityType: Decodable {
+    var id: String
+    var data: [Int]
+}
+
+class MyCustomService: RestfulWrite {
+
+    private let domain: URL = URL(string: "https://mydomain.com/entities")!
+    
+    public func post(on id: String) -> Promise<EntityType> {
+        let url = domain.appenddingPathComponent(id)
+        return write(url)
+    }
+}
+```
+
 ### RestfulWriteError Protocol - for executing POST requests with server validation response <a name="restfulwriteerror"></a>
 TODO
 ### RestfulUpdate Protocol - for executing PUT requests <a name="restfulupdate"></a>
