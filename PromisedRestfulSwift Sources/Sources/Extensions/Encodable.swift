@@ -25,4 +25,27 @@ extension Encodable {
         return dictionary
     }
     
+    public func toQueryParameters(in url: URL) throws -> URL {
+        guard let parameters = try? self.toDictionary() else {
+            throw DecodingErrors.failedToTransformToDictionary
+        }
+        let queryItems = parameters.map { key, value in
+            URLQueryItem(name: key, value: value as? String)
+        }
+        guard var urlComponent = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
+            throw GeneralErrors.fatal
+        }
+        urlComponent.queryItems = queryItems
+        guard let updatedUrl = urlComponent.url else {
+            throw GeneralErrors.fatal
+        }
+        return updatedUrl
+    }
+    
+    public func toPromisedQueryParameters(in url: URL) -> Promise<URL> {
+        return Promise { resolver in
+            let newUrl: URL = try self.toQueryParameters(in: url)
+            resolver.fulfill(newUrl)
+        }
+    }
 }
