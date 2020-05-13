@@ -33,6 +33,7 @@ public extension RestfulWriteError {
             .then(execute)
             .map(toValidatedLocationWithError)
     }
+    
     /// Executes a POST request on a resource: /solutions with the entity data and returns the server response
     /// - Parameter url: the url for the resource to create
     /// - Parameter entity: the entity to create
@@ -62,8 +63,8 @@ public extension RestfulWriteError {
     /// - Returns: A promise which resolves if the request was successful and contains the requested http response headers
     func writeAndExtractHeaders<T: Encodable>(_ url: URL, _ entity: T, _ headerKeys: [String]) -> Promise<HTTPHeadersType> {
         return buildPostRequest(url, entity)
-        .then(interceptor.intercept)
-        .then(execute)
-        .map { try self.toValidatedHeadersWithError($0, headerKeys) }
+            .then(interceptor.intercept)
+            .then(execute)
+            .map { try self.toValidatedHeadersWithError($0, headerKeys) }
     }
 }

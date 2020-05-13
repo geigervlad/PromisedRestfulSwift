@@ -48,7 +48,7 @@ public class OAuthInterceptor: InterceptorType, RestfulWrite {
     
     private let configuration: OAuthClientConfiguration
     private var loginData: OAuthData?
-        
+    
     public init(_ configuration: OAuthClientConfiguration, _ data: OAuthData? = nil) {
         self.configuration = configuration
         self.loginData = data
