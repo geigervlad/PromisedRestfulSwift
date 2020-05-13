@@ -28,7 +28,7 @@ Services:
 read(url: URL) -> Promise<Decodable>
 ```
 
-Example:
+Examples:
 
 ```swift
 struct EntityType: Decodable {
@@ -68,7 +68,7 @@ func writeAndExtractLocation(_ url: URL, _ entity: Encodable) -> Promise<String>
 func writeAndExtractHeaders(_ url: URL, _ entity: Encodable, _ headerKeys: [String]) -> Promise<HTTPHeadersType>
 ```
 
-Example:
+Examples:
 
 ```swift
 struct Request: Encodable {
@@ -116,7 +116,38 @@ In addition to the RestfulWrite Protocol a decodable error can be validated.
 [For services and examples please look at the RestfulWrite Protocol](#restfulwrite)
 
 ### RestfulUpdate Protocol - for executing PUT requests <a name="restfulupdate"></a>
-TODO
+This protocol provides possibility to execute PUT requests on an URL and returns an empty promise or a promise with the updated entity.
+
+Services:
+
+```swift
+func update(_ url: URL, _ entity: Encodable) -> Promise<Void>
+
+func update(_ url: URL, _ entity: Encodable) -> Promise<Decodable>
+```
+
+Examples:
+
+```swift
+struct Entity: Codable {
+    var firstName: String
+    var lastName: String
+}
+
+class MyCustomService: RestfulUpdate {
+
+    private let domain: URL = URL(string: "https://mydomain.com/entities")!
+    
+    public func change(entity: Entity) -> Promise<Void> {
+        return update(domain, entity)
+    }
+    
+    public func change(entity: Entity) -> Promise<Entity> {
+        return update(domain, entity)
+    }
+}
+```
+
 ### RestfulUpdateError Protocol - for executing PUT requests with server validation response <a name="restfulupdateerror"></a>
 TODO
 ### RestfulDelete Protocol - for executing PUT requests <a name="restfuldelete"></a>
