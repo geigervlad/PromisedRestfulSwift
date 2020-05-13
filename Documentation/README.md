@@ -154,11 +154,34 @@ In addition to the RestfulUpdate Protocol a decodable error can be validated.
 
 [For services and examples please look at the RestfulUpdate Protocol](#restfulupdate)
 
-### RestfulDelete Protocol - for executing PUT requests <a name="restfuldelete"></a>
-TODO
+### RestfulDelete Protocol - for executing DELETE requests <a name="restfuldelete"></a>
+This protocol provides possibility to execute DELETE request on an URL and returns an empty promise.
+
+Services:
+
+```swift
+func delete(_ url: URL) -> Promise<Void>
+```
+
+Examples:
+
+```swift
+class MyCustomService: RestfulDelete {
+
+    private let domain: URL = URL(string: "https://mydomain.com/entities")!
+
+    public func remove(on location: String) -> Promise<Void> {
+        let url = domain.appendingPathComponent(location)
+        return delete(url)
+    }
+}
+```
+
 ### RestfulUpload Protocol - for executing PUT requests <a name="restfulupload"></a>
-TODO
+This protocol is not implemented yet.
+
 ### Interceptor Protocol - for injecting custom needs within all or some requests <a name="interceptor"></a>
-TODO
+
+
 ### OAuthInterceptor - Implementation for injecting access_token within requests <a name="oauthinterceptor"></a>
-TODO
+
