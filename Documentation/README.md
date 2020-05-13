@@ -111,7 +111,7 @@ class MyCustomService: RestfulWrite {
 
 ### RestfulWriteError Protocol - for executing POST requests with server validation response <a name="restfulwriteerror"></a>
 This protocol provides possibility to execute POST requests on an URL and returns a promise with a decodable result or a location header.
-In addition to the RestfulWrite Protocol a decodable error can be validated. 
+In addition to the RestfulWrite Protocol a decodable error can be validated.
 
 [For services and examples please look at the RestfulWrite Protocol](#restfulwrite)
 
@@ -149,7 +149,11 @@ class MyCustomService: RestfulUpdate {
 ```
 
 ### RestfulUpdateError Protocol - for executing PUT requests with server validation response <a name="restfulupdateerror"></a>
-TODO
+This protocol provides possibility to execute PUT requests on an URL and returns an empty promise or a promise with the updated entity.
+In addition to the RestfulUpdate Protocol a decodable error can be validated.
+
+[For services and examples please look at the RestfulUpdate Protocol](#restfulupdate)
+
 ### RestfulDelete Protocol - for executing PUT requests <a name="restfuldelete"></a>
 TODO
 ### RestfulUpload Protocol - for executing PUT requests <a name="restfulupload"></a>
