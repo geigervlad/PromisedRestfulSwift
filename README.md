@@ -9,7 +9,7 @@ The library is based on Promises, Swift Codable and Protocol Oriented Developmen
 
 ## Dependencies
 -   JSON
--   SWIFT 5.0
+-   Swift 5.0
 -   iOS 11.4
 -   [PromiseKit](https://github.com/mxcl/PromiseKit)
 
@@ -20,7 +20,7 @@ The library is based on Promises, Swift Codable and Protocol Oriented Developmen
 use_frameworks!
 
 target "Change Me!" do
-pod "PromisedRestfulSwift", "~> 1.0.0"
+  pod "PromisedRestfulSwift", "~> 1.0.0"
 end
 ```
 
