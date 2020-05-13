@@ -11,7 +11,7 @@ The library is based on Promises, Swift Codable and Protocol Oriented Developmen
 -   JSON
 -   SWIFT 5.0
 -   iOS 11.4
--   [PromiseKIT](https://github.com/mxcl/PromiseKit)
+-   [PromiseKit](https://github.com/mxcl/PromiseKit)
 
 ## Installation
 
