@@ -52,12 +52,20 @@ class MyCustomService: RestfulRead {
 ```
 
 ### RestfulWrite Protocol - for executing POST requests <a name="restfulwrite"></a>
-This protocol provides possibiliry to execute POST requests on an URL and returns a promise with a decodable result or a location header.
+This protocol provides possibility to execute POST requests on an URL and returns a promise with a decodable result or a location header.
 
 Services:
 
 ```swift
 func write(_ url: URL) -> Promise<Decodable>
+
+func writeAndExtractLocation(_ url: URL) -> Promise<String>
+
+func write(_ url: URL, _  entity: Encodable) -> Promise<Decodable>
+
+func writeAndExtractLocation(_ url: URL, _ entity: Encodable) -> Promise<String>
+
+func writeAndExtractHeaders(_ url: URL, _ entity: Encodable, _ headerKeys: [String]) -> Promise<HTTPHeadersType>
 ```
 
 Example:
