@@ -33,6 +33,7 @@ public extension RestfulWriteError {
             .then(execute)
             .map(toValidatedLocationWithError)
     }
+    
     /// Executes a POST request on a resource: /solutions with the entity data and returns the server response
     /// - Parameter url: the url for the resource to create
     /// - Parameter entity: the entity to create
