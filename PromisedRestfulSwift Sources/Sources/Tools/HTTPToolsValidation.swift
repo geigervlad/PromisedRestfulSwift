@@ -21,10 +21,6 @@ public protocol HTTPToolsValidation: HTTPTools {
 
 public extension HTTPToolsValidation {
     
-    /// Checks a HTTPResponse for StatusCode, Error, Data and tries to transforms the data to expected Decodable Structure
-    /// In case of HTTP Status Codes Bad Request(400) or Conflict(409) the server response gets decoded with the defined error object type
-    /// - Parameter response: the HTTPResponse to check
-    /// - Returns: The Decoded Entity
     func toValidatedEntityWithError<T: Decodable>(_ response: HTTPResponseType) throws -> T {
         do {
             return try toValidatedEntity(response)
@@ -33,9 +29,6 @@ public extension HTTPToolsValidation {
         }
     }
     
-    /// Checks a HTTPResponse for StatusCode, Error
-    /// In case of HTTP Status Codes Bad Request(400) or Conflict(409) the server response gets decoded with the defined error object type
-    /// - Parameter response: the HTTPResponse to check
     func toValidatedError(_ response: HTTPResponseType) throws {
         do {
             _ = try toStatusCodeValidated(toErrorValidated(response))
@@ -44,10 +37,14 @@ public extension HTTPToolsValidation {
         }
     }
     
-    /// Checks a HTTPResponse for StatusCode, Error, and tries to extract the value of the HTTP Location Header
-    /// In case of HTTP Status Codes Bad Request(400) or Conflict(409) the server response gets decoded with the defined error object type
-    /// - Parameter response: the HTTPResponse to check
-    /// - Returns: The Value of the Location Header
+    func toValidatedHeadersWithError(_ response: HTTPResponseType, _ headerKeys: [String]) throws -> HTTPHeadersType {
+        do {
+            return try toValidatedHeaders(response, headerKeys)
+        } catch {
+            throw try extractServerError(error, response)
+        }
+    }
+    
     func toValidatedLocationWithError(_ response: HTTPResponseType) throws -> String {
         do {
             return try toValidatedLocation(response)

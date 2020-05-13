@@ -16,7 +16,7 @@ public protocol HTTPTools: Intercepting {
     /// - Parameter request: The request to execute
     /// - Returns: A Promise which resolves as soon as the request has been executed, with the HTTP Response
     func execute(_ request: URLRequest) -> Promise<HTTPResponseType>
-        
+    
 }
 
 // MARK: Default Implementation
@@ -48,7 +48,7 @@ public extension HTTPTools {
         }
         return response
     }
-        
+    
     func toEntity<T: Decodable>(_ response: HTTPResponseType) throws -> T {
         guard let data = response.0 else {
             throw DecodingErrors.failedToExtractData
@@ -63,21 +63,34 @@ public extension HTTPTools {
         return try toEntity(validatedResponse)
     }
     
-    func toValidatedLocation(_ response: HTTPResponseType) throws -> String {
+    func toValidatedHeaders(_ response: HTTPResponseType, _ headerKeys: [String]) throws -> HTTPHeadersType {
         let errorValidatedResponse = try toErrorValidated(response)
         let validatedResponse = try toStatusCodeValidated(errorValidatedResponse)
         guard let httpResponse = validatedResponse.1 as? HTTPURLResponse else {
             throw DecodingErrors.failedToTransformToHTTPURLResponse
         }
-        let potentialHeaderValue = httpResponse.allHeaderFields.first { (arg0) -> Bool in
-            let (key, _) = arg0
-            return key.description == "Location"
+        let arrayOfTupples: [(String, String)] = headerKeys.map { headerKey in
+            let potentialHeaderValue = httpResponse.allHeaderFields.first { (arg0) -> Bool in
+                let (key, _) = arg0
+                return key.description == headerKey
+            }
+            if let headerValue = potentialHeaderValue?.value as? String {
+                return (headerKey, headerValue)
+            } else {
+                return (headerKey, "")
+            }
         }
-        if let headerValue = potentialHeaderValue?.value as? String {
-            return headerValue
-        } else {
+        return Dictionary(uniqueKeysWithValues: arrayOfTupples)
+    }
+    
+    func toValidatedLocation(_ response: HTTPResponseType) throws -> String {
+        guard let locationHeader = try toValidatedHeaders(response, ["Location"]).first else {
+            throw GeneralErrors.fatal
+        }
+        guard !locationHeader.value.isEmpty else {
             throw DecodingErrors.failedToExtractLocationHeader
         }
+        return locationHeader.value
     }
     
     func buildPostRequest<T: Encodable>(_ url: URL, _ entity: T) -> Promise<URLRequest> {
