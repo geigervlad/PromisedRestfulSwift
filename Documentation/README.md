@@ -113,7 +113,57 @@ class MyCustomService: RestfulWrite {
 This protocol provides possibility to execute POST requests on an URL and returns a promise with a decodable result or a location header.
 Additionally to the RestfulWrite protocol, this protocol can decode server errors by providing the associated decodable error type.
 
-[For services and examples please look at the RestfulWrite Protocol](#restfulwrite)
+For services and examples please look at the [RestfulWrite Protocol](#restfulwrite)
+
+```swift
+struct Request: Encodable {
+    var firstName: String
+    var lastName: String
+}
+
+struct Response: Decodable {
+    var location: String
+    var firstName: String
+    var lastName: String
+}
+
+struct ServerError: Decodable {
+    var identifier: String
+    var message: String
+}
+
+class MyCustomService: RestfulWriteError {
+    
+    private let domain: URL = URL(string: "https://mydomain.com/entities")!
+    
+    typealias ErrorObjectType = ServerError
+    
+    public func createWithJsonEncodingAndExtractLocation(entity: Request) -> Promise<String> {
+        return writeAndExtractLocation(domain, entity)
+    }
+}
+
+class MyCustomViewController: UIViewController {
+    
+    func createEntity() {
+        let entity = Request(firstName: "promised", lastName: "restfulSwift")
+        let service = MyCustomService()
+        service.createWithJsonEncodingAndExtractLocation(entity: entity)
+            .done(on: .main) { location in
+                print(location)
+            }.recover(on: .main) { error in
+                switch error {
+                case ValidationErrors.withServerError(let serverErrorData):
+                    print(serverErrorData)
+                default:
+                    throw error
+                }
+            }.catch(on: .main) { error in
+                print(error)
+            }
+    }
+}
+```
 
 ### RestfulUpdate Protocol - for executing PUT requests <a name="restfulupdate"></a>
 This protocol provides possibility to execute PUT requests on an URL and returns an empty promise or a promise with the updated entity.
@@ -138,12 +188,14 @@ class MyCustomService: RestfulUpdate {
 
     private let domain: URL = URL(string: "https://mydomain.com/entities")!
     
-    public func change(entity: Entity) -> Promise<Void> {
-        return update(domain, entity)
+    public func change(entity: Entity, id: String) -> Promise<Void> {
+        let url = domain.appendingPathComponent(id)
+        return update(url, entity)
     }
     
-    public func change(entity: Entity) -> Promise<Entity> {
-        return update(domain, entity)
+    public func change(entity: Entity, id: String) -> Promise<Entity> {
+        let url = domain.appendingPathComponent(id)
+        return update(url, entity)
     }
 }
 ```
@@ -152,7 +204,7 @@ class MyCustomService: RestfulUpdate {
 This protocol provides possibility to execute PUT requests on an URL and returns an empty promise or a promise with the updated entity.
 Additionally to the RestfulUpdate protocol, this protocol can decode server errors by providing the associated decodable error type.
 
-[For services and examples please look at the RestfulUpdate Protocol](#restfulupdate)
+For services and examples please look at the [RestfulUpdate protocol](#restfulupdate) and [RestfulWriteError protocol](#restfulwriteerror).
 
 ### RestfulDelete Protocol - for executing DELETE requests <a name="restfuldelete"></a>
 This protocol provides possibility to execute DELETE request on an URL and returns an empty promise.
@@ -181,7 +233,10 @@ class MyCustomService: RestfulDelete {
 This protocol is not implemented yet.
 
 ### Interceptor Protocol - for injecting custom needs within all or some requests <a name="interceptor"></a>
+The interceptor provides the capability to inject custom functionality before executing the HTTP request.
+The default interceptor is defined as [```EmptyInterceptor```](../PromisedRestfulSwift Sources/Sources/Implementations/EmptyInterceptor.swift) and can be replaced by overwriting the value of the static attribute [```defaultInterceptor```](../PromisedRestfulSwift Sources/Sources/Definitions/Intercepting.swift).
 
+Example: Please check [```OAuthInterceptor```](../PromisedRestfulSwift Sources/Sources/Implementations/OAuthInterceptor.swift) which intercepts all request and injects an authorization header before executing the request.
 
 ### OAuthInterceptor - Implementation for injecting access_token within requests <a name="oauthinterceptor"></a>
-
+This interceptor provides a basic injection of bearer access token while refreshing it through the refresh token for OAuth2 protocol.
