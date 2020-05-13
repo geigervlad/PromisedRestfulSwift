@@ -234,7 +234,7 @@ This protocol is not implemented yet.
 
 ### Interceptor Protocol - for injecting custom needs within all or some requests <a name="interceptor"></a>
 The interceptor provides the capability to inject custom functionality before executing the HTTP request.
-The default interceptor is defined as [```EmptyInterceptor```](../PromisedRestfulSwift%20Sources/Sources/Implementations/EmptyInterceptor.swift) and can be replaced by overwriting the value of the static attribute [```defaultInterceptor```](../PromisedRestfulSwift%20Sources/Sources/Definitions/Intercepting.swift).
+The default interceptor is defined as [```EmptyInterceptor```](../PromisedRestfulSwift%20Sources/Sources/Implementations/EmptyInterceptor.swift) and can be replaced by overwriting the value of the static attribute [```defaultInterceptor```](../PromisedRestfulSwift%20Sources/Sources/Definitions/Intercepting.swift#L22).
 
 Example: Please check [```OAuthInterceptor```](../PromisedRestfulSwift%20Sources/Sources/Implementations/OAuthInterceptor.swift) which intercepts all request and injects an authorization header before executing the request.
 
