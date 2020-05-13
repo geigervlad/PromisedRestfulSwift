@@ -27,6 +27,7 @@ public extension RestfulUpdate {
     
     /// Executes a PUT request on a resource: /solutions with the entity data and returns the server response
     /// - Parameter url: the url of the resource to update
+    /// - Parameter entity: the entity to update
     /// - Returns: a promise which resolves if the update was successfull and contains  the server response data
     func update<T: Encodable, U: Decodable>(_ url: URL, _ entity: T) -> Promise<U> {
         var request = URLRequest(url: url)

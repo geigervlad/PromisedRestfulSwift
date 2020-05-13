@@ -22,9 +22,6 @@
 		89119DFE24482A6E00276EE3 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89119DFD24482A6E00276EE3 /* Promise.swift */; };
 		8934CCBC245801BE0042D89E /* HTTPToolsValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8934CCBB245801BE0042D89E /* HTTPToolsValidation.swift */; };
 		893B0BAD246537CE00C4BB1B /* PromisedRestfulSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 893B0BAC246537CD00C4BB1B /* PromisedRestfulSwift.podspec */; };
-		893B0BB524653A4500C4BB1B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 893B0BB024653A4500C4BB1B /* README.md */; };
-		893B0BB624653A4500C4BB1B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 893B0BB224653A4500C4BB1B /* README.md */; };
-		893B0BB724653A4500C4BB1B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 893B0BB424653A4500C4BB1B /* README.md */; };
 		8959AD62244991A1000F05E8 /* InterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8959AD61244991A1000F05E8 /* InterceptorType.swift */; };
 		896E4CD92449C3F500506013 /* EmptyInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E4CD82449C3F500506013 /* EmptyInterceptor.swift */; };
 		896E4CDD2449C49B00506013 /* OAuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E4CDC2449C49B00506013 /* OAuthInterceptor.swift */; };
@@ -542,11 +539,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				893B0BB624653A4500C4BB1B /* README.md in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				893B0BAD246537CE00C4BB1B /* PromisedRestfulSwift.podspec in Resources */,
-				893B0BB724653A4500C4BB1B /* README.md in Resources */,
-				893B0BB524653A4500C4BB1B /* README.md in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -614,10 +608,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PromisedRestfulSwift_Example/Pods-PromisedRestfulSwift_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisedRestfulSwift/PromisedRestfulSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromisedRestfulSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
