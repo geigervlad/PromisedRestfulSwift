@@ -71,18 +71,40 @@ func writeAndExtractHeaders(_ url: URL, _ entity: Encodable, _ headerKeys: [Stri
 Example:
 
 ```swift
-struct EntityType: Decodable {
-    var id: String
-    var data: [Int]
+struct Request: Encodable {
+    var firstName: String
+    var lastName: String
+}
+
+struct Response: Decodable {
+    var location: String
+    var firstName: String
+    var lastName: String
 }
 
 class MyCustomService: RestfulWrite {
-
+    
     private let domain: URL = URL(string: "https://mydomain.com/entities")!
     
-    public func post(on id: String) -> Promise<EntityType> {
-        let url = domain.appenddingPathComponent(id)
-        return write(url)
+    public func createWithUrlEncodingAndExtractResponse(entity: Request) -> Promise<Response> {
+        return entity.toPromisedQueryParameters(in: domain).then(write)
+    }
+    
+    public func createWithUrlEncodingAndExtractLocation(entity: Request) -> Promise<String> {
+        return entity.toPromisedQueryParameters(in: domain).then(writeAndExtractLocation)
+    }
+    
+    public func createWithJsonEncodingAndExtractResponse(entity: Request) -> Promise<Response> {
+        return write(domain, entity)
+    }
+    
+    public func createWithJsonEncodingAndExtractLocation(entity: Request) -> Promise<String> {
+        return writeAndExtractLocation(domain, entity)
+    }
+    
+    public func createWithJsonEncodingAndExtractHeaders(entity: Request) -> Promise<HTTPHeadersType> {
+        let headerKeys: [String] = ["Location", "Transaction"]
+        return writeAndExtractHeaders(domain, entity, headerKeys)
     }
 }
 ```
